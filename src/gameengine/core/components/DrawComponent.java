@@ -1,5 +1,6 @@
 package gameengine.core.components;
 
+// TODO useless?
 /**
  * Parent class for drawing-related components.
  *

@@ -40,12 +40,17 @@ public class Renderer implements ComponentListener {
     /**
      * Camera for view.
      */
-    public static Camera camera;
+    private static Camera camera;
 
     /**
      * Layers to draw
      */
     private ArrayList<Layer> layers;
+
+    /**
+     * Background color, default black
+     */
+    private Color background;
 
     /**
      * Defines values and starts listening for component information.
@@ -54,8 +59,8 @@ public class Renderer implements ComponentListener {
 
         window = GameManager.getGame().getWindow();
         layers = new ArrayList<>();
-
         camera = new Camera();
+        background = Color.BLACK;
 
         // Listen component changes
         ComponentManager.addCombination(this, ShapeRenderer.class,
@@ -74,9 +79,8 @@ public class Renderer implements ComponentListener {
 
         g = window.start();
 
-        // TODO change background color
         // Background color
-        g.setColor(Color.black);
+        g.setColor(background);
         g.fillRect(0,0,GameManager.getWidth(), GameManager.getHeight());
 
         g.translate(-camera.transform.x, -camera.transform.y);
@@ -184,6 +188,16 @@ public class Renderer implements ComponentListener {
             layer.drawables.add(drawable);
             layers.add(layer);
         }
+    }
+
+    /**
+     * Sets background color to given color
+     *
+     * @param color New background color
+     */
+    public void setBackgroundColor(Color color) {
+
+        background = color;
     }
 
     /**
