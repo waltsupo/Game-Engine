@@ -1,0 +1,63 @@
+package gameengine.core.components;
+
+import gameengine.mathlib.Shape;
+
+/**
+ * Collider-component for handling collisions.
+ *
+ * Collider has shape and layer to handle collision. Layer collision can be
+ * changed from Collisions class.
+ *
+ * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
+ * @version 2016.1002
+ * @since 1.7
+ */
+public class Collider extends Component{
+
+    /**
+     * Collider's layer, layers can be used to ignore collision between
+     * objects.
+     */
+    public int layer;
+
+    /**
+     * Shape of the collider.
+     */
+    public Shape shape;
+
+    /**
+     * Constructor for Collider.
+     *
+     * @param shape Collider's shape and position information
+     * @param layer Collider's layer
+     */
+    public Collider(Shape shape, int layer) {
+
+        this.layer = layer;
+        this.shape = shape;
+    }
+
+    /**
+     * Moves collider by given amount.
+     *
+     * @param x Change on X-axis
+     * @param y Change on y-axis
+     */
+    public void translate(float x, float y) {
+
+        shape.x += x;
+        shape.y += y;
+    }
+
+    /**
+     * Moves collider to given position.
+     *
+     * @param x New X-coordinate
+     * @param y New Y-coordinate
+     */
+    public void moveTo(float x, float y) {
+
+        shape.x = x;
+        shape.y = y;
+    }
+}

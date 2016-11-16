@@ -1,0 +1,116 @@
+package gameengine.core.components;
+
+import gameengine.core.GameObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Class that handles adding/removing components.
+ *
+ * Has list containing listeners and wanted combination, notifies
+ * listeners if changes happen relating to their
+ * wanted components.
+ *
+ * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
+ * @version 2016.1002
+ * @since 1.7
+ */
+public class ComponentManager {
+
+    /**
+     * Contains listener and list of classes(component combinations).
+     */
+    private static HashMap<ComponentListener,
+            ArrayList<ArrayList<Class>>> combinations = new HashMap<>();
+
+    /**
+     * Adds new combination to list.
+     *
+     * Listener calls this method to get information about new components.
+     *
+     * @param listener ComponentListener that wants information
+     * @param components components to listen at
+     */
+    public static void addCombination(ComponentListener listener,
+                                      Class... components) {
+
+        ArrayList<Class> temp = new ArrayList<>();
+
+        for (Class compClass : components) {
+            temp.add(compClass);
+        }
+
+        // If already listening combination
+        if (combinations.containsKey(listener)) {
+            combinations.get(listener).add(temp);
+        } else {
+            ArrayList<ArrayList<Class>> list = new ArrayList<>();
+            list.add(temp);
+            combinations.put(listener, list);
+        }
+    }
+
+    // TODO removeCombination
+    /**
+     * This will remove listener from the list later.
+     *
+     * @param listener Listener
+     * @param components components
+     */
+    public static void removeCombination(ComponentListener listener,
+                                         Class... components) {
+
+    }
+
+    /**
+     * Looks if any listener wants information about new component
+     *
+     * @param gameObject Component's parent GameObject
+     * @param component New component
+     */
+    public static void newComponent(GameObject gameObject,
+                                    Component component) {
+
+        // Loop every entry in combinations
+        for (Map.Entry<ComponentListener,
+                ArrayList<ArrayList<Class>>> entry : combinations.entrySet()) {
+
+            // Loop class combinations
+            for (int index = 0; index < entry.getValue().size(); index++) {
+                ArrayList<Class> classList = entry.getValue().get(index);
+
+                // If contains new component's class
+                if (classList.contains(component.getClass())) {
+
+                    boolean hasComponents = true;
+
+                    // See if GameObject has other components required
+                    for (Class compClass : classList) {
+
+                        if (gameObject.getComponent(compClass) == null) {
+                            hasComponents = false;
+                        }
+                    }
+
+                    if(hasComponents) {
+                        entry.getKey().newComponent(gameObject, component);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Looks if listener needs information that specific component has
+     * been removed.
+     *
+     * @param gameObject Component's parent GameObject
+     * @param component Removed component
+     */
+    public static void removeComponent(GameObject gameObject, Class component) {
+
+
+    }
+}
