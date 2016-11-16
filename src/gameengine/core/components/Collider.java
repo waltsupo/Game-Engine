@@ -21,7 +21,7 @@ public class Collider extends Component{
     public int layer;
 
     /**
-     * Shape of the collider.
+     * Shape of the Collider.
      */
     public Shape shape;
 
@@ -35,29 +35,5 @@ public class Collider extends Component{
 
         this.layer = layer;
         this.shape = shape;
-    }
-
-    /**
-     * Moves collider by given amount.
-     *
-     * @param x Change on X-axis
-     * @param y Change on y-axis
-     */
-    public void translate(float x, float y) {
-
-        shape.x += x;
-        shape.y += y;
-    }
-
-    /**
-     * Moves collider to given position.
-     *
-     * @param x New X-coordinate
-     * @param y New Y-coordinate
-     */
-    public void moveTo(float x, float y) {
-
-        shape.x = x;
-        shape.y = y;
     }
 }
