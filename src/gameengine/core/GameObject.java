@@ -128,10 +128,10 @@ public class GameObject {
         Component comp = getComponent(component.getClass());
 
         if (comp == null) {
-            components.add(component);
-        }
 
-        ComponentManager.newComponent(this, component);
+            components.add(component);
+            ComponentManager.newComponent(this, component);
+        }
     }
 
     /**
@@ -144,6 +144,8 @@ public class GameObject {
         Component toRemove = getComponent(comClass);
 
         if (toRemove != null) {
+
+            ComponentManager.removeComponent(this, comClass);
             components.remove(toRemove);
         }
     }

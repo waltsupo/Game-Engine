@@ -38,6 +38,7 @@ public class ComponentManager {
 
         ArrayList<Class> temp = new ArrayList<>();
 
+        // Add given components to ArrayList
         for (Class compClass : components) {
             temp.add(compClass);
         }
@@ -52,16 +53,28 @@ public class ComponentManager {
         }
     }
 
-    // TODO removeCombination
     /**
-     * This will remove listener from the list later.
+     * Stops listener from getting information about combination of components
      *
-     * @param listener Listener
-     * @param components components
+     * @param listener Listener that does not need information anymore
+     * @param first Class of the first component on the list
      */
     public static void removeCombination(ComponentListener listener,
-                                         Class... components) {
+                                         Class first) {
 
+        // If has listener
+        if (combinations.containsKey(listener)) {
+
+            // If combination has first as first element, remove combination
+            for (ArrayList<Class> classList : combinations.get(listener)) {
+
+                if (classList.get(0) == first) {
+
+                    combinations.get(listener).remove(classList);
+                    break;
+                }
+            }
+        }
     }
 
     /**
@@ -107,10 +120,38 @@ public class ComponentManager {
      * been removed.
      *
      * @param gameObject Component's parent GameObject
-     * @param component Removed component
+     * @param comClass Class of removed component
      */
-    public static void removeComponent(GameObject gameObject, Class component) {
+    public static void removeComponent(GameObject gameObject, Class comClass) {
 
 
+        // Loop every entry in combinations
+        for (Map.Entry<ComponentListener,
+                ArrayList<ArrayList<Class>>> entry : combinations.entrySet()) {
+
+            // Loop class combinations
+            for (int index = 0; index < entry.getValue().size(); index++) {
+                ArrayList<Class> classList = entry.getValue().get(index);
+
+                // If contains new component's class
+                if (classList.contains(comClass)) {
+
+                    boolean hasComponents = true;
+
+                    // See if GameObject has other components required
+                    for (Class compClass : classList) {
+
+                        if (gameObject.getComponent(compClass) == null) {
+                            hasComponents = false;
+                        }
+                    }
+
+                    if(hasComponents) {
+                        entry.getKey()
+                                .removeComponent(gameObject, classList.get(0));
+                    }
+                }
+            }
+        }
     }
 }
