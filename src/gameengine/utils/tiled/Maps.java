@@ -182,7 +182,6 @@ public class Maps {
                 getNamedItem("height").getNodeValue());
         layer.z = z;
 
-        System.out.println("tiles" + codes.length);
         layer.tiles = codes;
 
         map.layers.add(layer);

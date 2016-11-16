@@ -66,16 +66,9 @@ public class TiledMapLayer {
         TileSet tileset = map.tileSets.get(0);
         Vector tileCoords;
 
-        System.out.println("drawing map");
-        System.out.println(width);
-        System.out.println(height);
-
         for (int rowIndex = 0; rowIndex < height; rowIndex++) {
             for (int colIndex = 0; colIndex < width; colIndex++) {
 
-                System.out.println("row:" + rowIndex);
-                System.out.println("col:" + colIndex);
-                System.out.println("sum" + (rowIndex * width + colIndex));
                 if (tiles[rowIndex * width + colIndex] == -1) {
                     continue;
                 }
