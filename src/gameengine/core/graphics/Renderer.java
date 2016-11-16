@@ -79,9 +79,6 @@ public class Renderer implements ComponentListener {
         g.setColor(Color.black);
         g.fillRect(0,0,GameManager.getWidth(), GameManager.getHeight());
 
-        // Update camera
-        camera.update();
-
         g.translate(-camera.transform.x, -camera.transform.y);
 
         // Draw layers

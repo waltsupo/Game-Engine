@@ -18,27 +18,11 @@ public class Camera {
     public Transform transform;
 
     /**
-     * GameObject to follow
-     */
-    public GameObject gameObject;
-
-    /**
      * Constructor for camera
      */
     public Camera() {
 
         transform = new Transform(0, 0, 800, 600);
-        gameObject = null;
-    }
-
-    /**
-     * Starts following given GameObject
-     *
-     * @param gameObject GameObject to follow
-     */
-    public void followObject(GameObject gameObject) {
-
-        this.gameObject = gameObject;
     }
 
     /**
@@ -63,16 +47,5 @@ public class Camera {
 
         transform.x = x;
         transform.y = y;
-    }
-
-    /**
-     * Updates camera position when following GameObject
-     */
-    public void update() {
-
-        if (gameObject != null) {
-            transform.x = gameObject.transform.x - transform.width / 2;
-            transform.y = gameObject.transform.y - transform.height / 2;
-        }
     }
 }
