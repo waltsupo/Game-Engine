@@ -102,6 +102,11 @@ public class TiledMapLayer {
         image = layerImage;
     }
 
+    /**
+     * Sets z-index of this layer
+     *
+     * @param z New z-index
+     */
     public void setZ(int z) {
 
         if (z == this.z) {
