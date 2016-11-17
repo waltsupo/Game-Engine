@@ -4,6 +4,7 @@ import gameengine.core.physics.Collisions;
 import gameengine.core.graphics.Renderer;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * Scene, user can create multiple scenes and switch between those.
@@ -25,9 +26,9 @@ public abstract class Scene {
     private Renderer renderer;
 
     /**
-     * Contains all sub-systems
+     * Contains all sub-systems, updated from newest to oldest
      */
-    private ArrayList<SubSystem> systems;
+    private LinkedList<SubSystem> systems;
 
     /**
      * Defines required values
@@ -35,7 +36,7 @@ public abstract class Scene {
     public Scene() {
 
         gameObjects = new ArrayList<>();
-        systems = new ArrayList<>();
+        systems = new LinkedList<>();
 
         renderer = new Renderer();
         addSubSystem(new Collisions());
@@ -89,7 +90,7 @@ public abstract class Scene {
      *
      * @param system SubSystem to add
      */
-    public void addSubSystem(SubSystem system) {
+    protected void addSubSystem(SubSystem system) {
 
         boolean systemExists = false;
 
@@ -102,7 +103,7 @@ public abstract class Scene {
 
         if (!systemExists) {
 
-            systems.add(system);
+            systems.addFirst(system);
         }
     }
 
@@ -131,8 +132,8 @@ public abstract class Scene {
 
         for (SubSystem system : systems) {
             if (system.getClass() == systemClass) {
-                System.out.println("found");
-                return (T) system;
+
+                return systemClass.cast(system);
             }
         }
         return null;
