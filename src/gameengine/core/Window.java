@@ -44,7 +44,7 @@ public class Window {
     /**
      * Creates window
      */
-    public Window() {
+    Window() {
 
         frame = new JFrame();
 

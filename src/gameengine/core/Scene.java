@@ -45,7 +45,7 @@ public abstract class Scene {
     /**
      * Updates scene, handles engine side of update
      */
-    public void updateScene(float delta) {
+    void updateScene(float delta) {
 
         update(delta);
 
@@ -57,7 +57,7 @@ public abstract class Scene {
     /**
      * Renders scene
      */
-    public void render() {
+    void render() {
 
         renderer.render();
     }

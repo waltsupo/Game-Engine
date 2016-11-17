@@ -15,7 +15,7 @@ import java.awt.Graphics2D;
  * @version 2016.1117
  * @since 1.7
  */
-public class DrawableShape extends DrawableObject {
+class DrawableShape extends DrawableObject {
 
     /**
      * What to draw
@@ -27,7 +27,7 @@ public class DrawableShape extends DrawableObject {
      *
      * @param gameObject Related GameObject
      */
-    public DrawableShape(GameObject gameObject) {
+    DrawableShape(GameObject gameObject) {
 
         this.gameObject = gameObject;
         shapeRenderer = gameObject.getComponent(ShapeRenderer.class);
@@ -41,7 +41,7 @@ public class DrawableShape extends DrawableObject {
      * @param camera Camera for checks
      */
     @Override
-    public void draw(Graphics2D g, Camera camera) {
+    void draw(Graphics2D g, Camera camera) {
 
         if (shapeRenderer.shape == Shapes.RECTANGLE) {
             Rectangle rect = new Rectangle(gameObject.transform.x,

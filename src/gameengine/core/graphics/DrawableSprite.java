@@ -12,7 +12,7 @@ import java.awt.Graphics2D;
  * @version 2016.1117
  * @since 1.7
  */
-public class DrawableSprite extends DrawableObject {
+class DrawableSprite extends DrawableObject {
 
     /**
      * What to draw
@@ -24,7 +24,7 @@ public class DrawableSprite extends DrawableObject {
      *
      * @param gameObject Related GameObject
      */
-    public DrawableSprite(GameObject gameObject) {
+    DrawableSprite(GameObject gameObject) {
 
         this.gameObject = gameObject;
         spriteRenderer = gameObject.getComponent(SpriteRenderer.class);
@@ -38,7 +38,7 @@ public class DrawableSprite extends DrawableObject {
      * @param camera Camera for checks
      */
     @Override
-    public void draw(Graphics2D g, Camera camera) {
+    void draw(Graphics2D g, Camera camera) {
 
         g.drawImage(spriteRenderer.image, (int) gameObject.transform.x,
                 (int) (gameObject.transform.y + gameObject.transform.height),

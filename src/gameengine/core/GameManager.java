@@ -73,7 +73,7 @@ public class GameManager {
      *
      * @param newGame New Game
      */
-    public static void setGame(Game newGame) {
+    static void setGame(Game newGame) {
 
         if (newGame != null) {
 

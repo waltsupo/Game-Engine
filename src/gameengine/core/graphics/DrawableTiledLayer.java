@@ -14,12 +14,7 @@ import java.awt.*;
  * @version 2016.1117
  * @since 1.7
  */
-public class DrawableTiledLayer extends DrawableObject {
-
-    /**
-     * Reference to original tiledMapRenderer
-     */
-    private TiledMapRenderer tiledMapRenderer;
+class DrawableTiledLayer extends DrawableObject {
 
     /**
      * Parent TiledMap
@@ -37,12 +32,11 @@ public class DrawableTiledLayer extends DrawableObject {
      * @param tiledMapRenderer TiledMapRenderer to get necessary information
      * @param layer To what layer TiledMapLayer will be drawn
      */
-    public DrawableTiledLayer(GameObject gameObject,
+    DrawableTiledLayer(GameObject gameObject,
                               TiledMapRenderer tiledMapRenderer,
                               TiledMapLayer layer) {
 
         this.gameObject = gameObject;
-        this.tiledMapRenderer = tiledMapRenderer;
         map = tiledMapRenderer.tilemap;
         tiledLayer = layer;
         this.z = layer.z;
@@ -55,7 +49,7 @@ public class DrawableTiledLayer extends DrawableObject {
      * @param camera Camera for checks
      */
     @Override
-    public void draw(Graphics2D g, Camera camera) {
+    void draw(Graphics2D g, Camera camera) {
 
         g.drawImage(tiledLayer.image, (int) map.x,
                 (int) map.y,

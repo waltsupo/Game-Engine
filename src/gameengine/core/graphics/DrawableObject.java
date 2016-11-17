@@ -16,12 +16,12 @@ abstract class DrawableObject {
     /**
      * Related GameObject
      */
-    public GameObject gameObject;
+    GameObject gameObject;
 
     /**
      * Object's layer
      */
-    public int z;
+    int z;
 
     /**
      * Draws object
@@ -29,5 +29,5 @@ abstract class DrawableObject {
      * @param g Graphics-object for drawing
      * @param camera Camera for checks
      */
-    public abstract void draw(Graphics2D g, Camera camera);
+    abstract void draw(Graphics2D g, Camera camera);
 }

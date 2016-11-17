@@ -9,24 +9,24 @@ import java.util.ArrayList;
  * @version 2016.1117
  * @since 1.7
  */
-public class Layer {
+class Layer {
 
     /**
      * Layer's Z-index
      */
-    public int z;
+    int z;
 
     /**
      * DrawableObjects to draw
      */
-    public ArrayList<DrawableObject> drawables;
+    ArrayList<DrawableObject> drawables;
 
     /**
      * Constructor
      *
      * @param layer Layer's Z-index
      */
-    public Layer(int layer) {
+    Layer(int layer) {
 
         z = layer;
         drawables = new ArrayList<>();
