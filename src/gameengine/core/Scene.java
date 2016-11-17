@@ -28,7 +28,7 @@ public abstract class Scene {
     /**
      * Contains all sub-systems, updated from newest to oldest
      */
-    private LinkedList<SubSystem> systems;
+    final private LinkedList<SubSystem> systems;
 
     /**
      * Defines required values
@@ -104,22 +104,6 @@ public abstract class Scene {
         if (!systemExists) {
 
             systems.addFirst(system);
-        }
-    }
-
-    /**
-     * Removes sub system of given class from the game loop
-     *
-     * @param systemClass Class to remove
-     */
-    public <T extends SubSystem> void deleteSubSystem(Class<T> systemClass) {
-
-        for (SubSystem system : systems) {
-
-            if (system.getClass() == systemClass) {
-
-                systems.remove(system);
-            }
         }
     }
 
