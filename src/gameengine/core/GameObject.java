@@ -21,7 +21,7 @@ public class GameObject {
     /**
      * List containing all components.
      */
-    private ArrayList<Component> components;
+    final private ArrayList<Component> components;
 
     /**
      * Parent object.
@@ -36,7 +36,7 @@ public class GameObject {
     /**
      * Transform component.
      */
-    public Transform transform;
+    final public Transform transform;
 
     /**
      * Defines values, and creates transform component.
@@ -123,7 +123,7 @@ public class GameObject {
      *
      * @param component Component to add
      */
-    public void addComponent(Component component) {
+    protected void addComponent(Component component) {
 
         Component comp = getComponent(component.getClass());
 
@@ -131,22 +131,6 @@ public class GameObject {
 
             components.add(component);
             ComponentManager.newComponent(this, component);
-        }
-    }
-
-    /**
-     * Removes component from the GameObject.
-     *
-     * @param comClass Component class to remove
-     */
-    public <T extends Component> void removeComponent(Class<T> comClass) {
-
-        Component toRemove = getComponent(comClass);
-
-        if (toRemove != null) {
-
-            ComponentManager.removeComponent(this, toRemove);
-            components.remove(toRemove);
         }
     }
 
@@ -191,8 +175,7 @@ public class GameObject {
 
         parent = null;
         childs = null;
-        transform = null;
-        components = null;
+        components.clear();
 
         /*ArrayList<Component> remove = new ArrayList<>(components);
 
