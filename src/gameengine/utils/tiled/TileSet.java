@@ -1,6 +1,7 @@
 package gameengine.utils.tiled;
 
 import gameengine.mathlib.Vector;
+import gameengine.utils.Files;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -77,7 +78,7 @@ public class TileSet {
 
         // TODO Exception
         try {
-            image = ImageIO.read(new File(url));
+            image = Files.loadImage(url);
         } catch (IOException e) {
             e.printStackTrace();  //----------------------------- FIX
         }
