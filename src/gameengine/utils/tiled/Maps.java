@@ -6,6 +6,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import gameengine.utils.Files;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -29,27 +30,18 @@ public class Maps {
      * @param url Path to source
      * @return Tiled map created from the source
      */
-    public static TiledMap loadTiledMap(String url) {
+    public static TiledMap loadTiledMap(String url) throws Exception {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = null;
-
-        // TODO Exception
-        try {
-            builder = factory.newDocumentBuilder();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace(); //_------------------------------------------------FIX
-        }
-
         Document document = null;
 
-        // TODO Exception
         try {
+            builder = factory.newDocumentBuilder();
             document = builder.parse(new File(defaultPath + url));
-        } catch (SAXException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace(); //--------------------------------------------------FIX
+            throw new Exception("Exception when setting up loading the map");
         }
 
         TiledMap map = new TiledMap();
@@ -116,8 +108,9 @@ public class Maps {
      *
      * @param map TileSet's parent map
      * @param node Node to create TileSet from
+     * @throws IOException If TileSet image not found
      */
-    private static void newTileSet(TiledMap map, Node node) {
+    private static void newTileSet(TiledMap map, Node node) throws IOException {
 
         // Get image node
         Node image = null;
@@ -141,9 +134,9 @@ public class Maps {
             set.name = node.getAttributes().getNamedItem("name").getNodeValue();
         }
 
-        set.setImage(defaultPath + image.getAttributes().
-                getNamedItem("source")
-                .getNodeValue());
+        set.image = Files.loadImage(defaultPath + image.getAttributes().
+                getNamedItem("source").getNodeValue());
+
         set.tileWidth = Integer.parseInt(node.getAttributes().
                 getNamedItem("tilewidth").getNodeValue());
         set.tileHeight = Integer.parseInt(node.getAttributes().

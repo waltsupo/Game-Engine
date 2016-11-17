@@ -87,8 +87,10 @@ public class Window {
         try {
             canvas.createBufferStrategy(2, config.getBufferCapabilities());
         } catch (AWTException e) {
-            e.printStackTrace(); // TODO exception
+            e.printStackTrace();
+            System.exit(1);
         }
+
         bStrat = canvas.getBufferStrategy();
 
         // image's pixels will be manipulated and later image will be drawn

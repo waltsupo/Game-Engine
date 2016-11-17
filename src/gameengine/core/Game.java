@@ -138,7 +138,7 @@ public abstract class Game {
 
             if (second >= 1) {
                 second--;
-                System.out.println("framerate: " + frames);
+                //System.out.println("framerate: " + frames);
                 frames = 0;
             }
         }

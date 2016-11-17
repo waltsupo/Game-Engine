@@ -32,7 +32,6 @@ public class Config {
         width = 600;
         height = 800;
 
-        // TODO does not work on desktop
         openGL = true;
     }
 

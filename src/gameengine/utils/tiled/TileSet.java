@@ -66,21 +66,6 @@ public class TileSet {
     }
 
     /**
-     * Loads image to be used on TileSet
-     *
-     * @param url path to image
-     */
-    public void setImage(String url) {
-
-        // TODO Exception
-        try {
-            image = Files.loadImage(url);
-        } catch (IOException e) {
-            e.printStackTrace();  //----------------------------- FIX
-        }
-    }
-
-    /**
      * Returns coordinates for given tile index to be used in drawing
      *
      * @param index Tile index
