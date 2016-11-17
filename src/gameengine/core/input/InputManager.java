@@ -6,9 +6,9 @@ import gameengine.mathlib.Vector;
 import java.awt.event.*;
 
 /**
- * Handles registering input
+ * Handles registering input.
  *
- * Contains methods to get states of keys
+ * Contains methods to get states of keys.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -18,24 +18,24 @@ public class InputManager implements KeyListener, MouseListener,
         MouseMotionListener{
 
     /**
-     * States of all keys, are they down
+     * States of all keys, are they down.
      */
     private static Boolean[] keys;
 
     /**
-     * States of mouse buttons
+     * States of mouse buttons.
      */
     private static Boolean[] mouse;
 
     /**
-     * Current position of mouse, updated when pressed
+     * Current position of mouse, updated when pressed.
      */
     private static Vector mousePos;
 
     /**
-     * Defines values for attributes
+     * Defines values for attributes.
      */
-    public InputManager () {
+    public InputManager() {
         keys = new Boolean[256];
 
         for (int i = 0; i < 256; i++)
@@ -46,11 +46,11 @@ public class InputManager implements KeyListener, MouseListener,
         for (int i = 0; i < 1; i++)
             mouse[i] = false;
 
-        mousePos = new Vector(0,0);
+        mousePos = new Vector(0, 0);
     }
 
     /**
-     * Handles KeyTyped event
+     * Handles KeyTyped event.
      *
      * @param e KeyEvent
      */
@@ -60,7 +60,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Handles KeyPressed event
+     * Handles KeyPressed event.
      *
      * @param e KeyEvent
      */
@@ -71,7 +71,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Handles KeyReleased event
+     * Handles KeyReleased event.
      *
      * @param e KeyEvent
      */
@@ -82,7 +82,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Handles MouseClicked event
+     * Handles MouseClicked event.
      *
      * @param e MouseEvent
      */
@@ -94,7 +94,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Handles MousePressed event
+     * Handles MousePressed event.
      *
      * @param e MouseEvent
      */
@@ -107,7 +107,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Handles MouseReleased event
+     * Handles MouseReleased event.
      *
      * @param e MouseEvent
      */
@@ -120,7 +120,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Handles MouseEntered event
+     * Handles MouseEntered event.
      *
      * @param e MouseEvent
      */
@@ -130,7 +130,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Handles MouseExited event
+     * Handles MouseExited event.
      *
      * @param e MouseEvent
      */
@@ -140,7 +140,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Handles MouseDragged event
+     * Handles MouseDragged event.
      *
      * @param e MouseEvent
      */
@@ -152,7 +152,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Handles MouseMoved event
+     * Handles MouseMoved event.
      *
      * @param e MouseEvent
      */
@@ -162,7 +162,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Tells if given key is down
+     * Tells if given key is down.
      *
      * @param keyCode Keycode of key
      * @return if key is down
@@ -173,7 +173,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Tells if mouse key is down
+     * Tells if mouse key is down.
      *
      * @return if mouse button is down
      */
@@ -182,7 +182,7 @@ public class InputManager implements KeyListener, MouseListener,
     }
 
     /**
-     * Gives current position of cursor
+     * Gives current position of cursor.
      *
      * @return postion of cursor
      */

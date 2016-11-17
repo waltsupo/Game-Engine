@@ -9,7 +9,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 /**
- * Object to draw shape
+ * Object to draw shape.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -18,12 +18,12 @@ import java.awt.Graphics2D;
 class DrawableShape extends DrawableObject {
 
     /**
-     * What to draw
+     * What to draw.
      */
     private ShapeRenderer shapeRenderer;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param gameObject Related GameObject
      */
@@ -35,7 +35,7 @@ class DrawableShape extends DrawableObject {
     }
 
     /**
-     * Draws Shape
+     * Draws Shape.
      *
      * @param g Graphics-object for drawing
      * @param camera Camera for checks
@@ -52,8 +52,9 @@ class DrawableShape extends DrawableObject {
     }
 
     /**
-     * Draws rectangle
+     * Draws rectangle.
      *
+     * @param g Graphics-object for drawing
      * @param rectangle Rectangle to draw
      * @param color Color
      * @param type Fill type

@@ -6,7 +6,7 @@ import gameengine.core.components.Transform;
 import java.awt.Graphics2D;
 
 /**
- * Object to draw image
+ * Object to draw image.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -15,12 +15,12 @@ import java.awt.Graphics2D;
 class DrawableSprite extends DrawableObject {
 
     /**
-     * What to draw
+     * What to draw.
      */
     private SpriteRenderer spriteRenderer;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param gameObject Related GameObject
      */
@@ -32,7 +32,7 @@ class DrawableSprite extends DrawableObject {
     }
 
     /**
-     * Draws image
+     * Draws image.
      *
      * @param g Graphics-object for drawing
      * @param camera Camera for checks

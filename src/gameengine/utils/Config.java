@@ -1,7 +1,7 @@
 package gameengine.utils;
 
 /**
- * Object that contains information about game's properties
+ * Object that contains information about game's properties.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -10,22 +10,22 @@ package gameengine.utils;
 public class Config {
 
     /**
-     * Width of the game window
+     * Width of the game window.
      */
     public int width;
 
     /**
-     * Height of the game window
+     * Height of the game window.
      */
     public int height;
 
     /**
-     * Should openGl be used or not
+     * Should openGl be used or not.
      */
     public boolean openGL;
 
     /**
-     * Default constructor
+     * Default constructor.
      */
     public Config() {
 
@@ -36,7 +36,7 @@ public class Config {
     }
 
     /**
-     * Constuctor with width and height for the game
+     * Defines values.
      *
      * @param width Width of the game window
      * @param height Height of the game window

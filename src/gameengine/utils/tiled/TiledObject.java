@@ -1,7 +1,7 @@
 package gameengine.utils.tiled;
 
 /**
- * Tiled map object
+ * Tiled map object.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.fi
  * @version 2016.1117
@@ -10,37 +10,37 @@ package gameengine.utils.tiled;
 public class TiledObject {
 
     /**
-     * Name of the object
+     * Name of the object.
      */
     public String name;
 
     /**
-     * Type of the object
+     * Type of the object.
      */
     public String type;
 
     /**
-     * X-coordinate
+     * X-coordinate.
      */
     public float x;
 
     /**
-     * Y-coordinate
+     * Y-coordinate.
      */
     public float y;
 
     /**
-     * Width of the object
+     * Width of the object.
      */
     public float width;
 
     /**
-     * Height of the object
+     * Height of the object.
      */
     public float height;
 
     /**
-     * Default constructor
+     * Default constructor.
      */
     public TiledObject() {
 

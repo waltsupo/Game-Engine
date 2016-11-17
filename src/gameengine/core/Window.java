@@ -8,7 +8,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 /**
- * Window for the game
+ * Window for the game.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -17,32 +17,32 @@ import java.awt.image.BufferedImage;
 public class Window {
 
     /**
-     * JFrame for the game
+     * JFrame for the game.
      */
     private JFrame frame;
 
     /**
-     * Canvas for drawing
+     * Canvas for drawing.
      */
     private Canvas canvas;
 
     /**
-     * Image for drawing
+     * Image for drawing.
      */
     private BufferedImage image;
 
     /**
-     * graphics for drawing
+     * graphics for drawing.
      */
     private Graphics2D g;
 
     /**
-     * BufferStrategy for drawing
+     * BufferStrategy for drawing.
      */
     private BufferStrategy bStrat;
 
     /**
-     * Creates window
+     * Creates window.
      */
     Window() {
 
@@ -80,7 +80,8 @@ public class Window {
         canvas.setFocusable(true);
 
         // Create compatible image
-        GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsEnvironment env =
+                GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice device = env.getDefaultScreenDevice();
         GraphicsConfiguration config = device.getDefaultConfiguration();
 
@@ -102,9 +103,9 @@ public class Window {
     }
 
     /**
-     * Starts drawing to buffer
+     * Starts drawing to buffer.
      *
-     * Gets graphics object and returns it
+     * Gets graphics object and returns it.
      *
      * @return graphics object used to draw
      */
@@ -120,7 +121,7 @@ public class Window {
     }
 
     /**
-     * Stops drawing and shows next image
+     * Stops drawing and shows next image.
      */
     public void stop() {
 

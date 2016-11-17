@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
- * Scene, user can create multiple scenes and switch between those
+ * Scene, user can create multiple scenes and switch between those.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -16,7 +16,7 @@ import java.util.LinkedList;
 public abstract class Scene {
 
     /**
-     * Contains all GameObjects in the Scene
+     * Contains all GameObjects in the Scene.
      */
     private ArrayList<GameObject> gameObjects;
 
@@ -26,12 +26,12 @@ public abstract class Scene {
     private Renderer renderer;
 
     /**
-     * Contains all sub-systems, updated from newest to oldest
+     * Contains all sub-systems, updated from newest to oldest.
      */
     final private LinkedList<SubSystem> systems;
 
     /**
-     * Defines required values
+     * Defines required values.
      */
     public Scene() {
 
@@ -43,7 +43,9 @@ public abstract class Scene {
     }
 
     /**
-     * Updates scene, handles engine side of update
+     * Updates scene, handles engine side of update.
+     *
+     * @param delta Elapsed time since last update
      */
     void updateScene(float delta) {
 
@@ -55,7 +57,7 @@ public abstract class Scene {
     }
 
     /**
-     * Renders scene
+     * Renders scene.
      */
     void render() {
 
@@ -64,12 +66,13 @@ public abstract class Scene {
 
     /**
      * Updates scene, called once every update.
+     *
+     * @param delta Elapsed time since last update
      */
     abstract public void update(float delta);
 
-
     /**
-     * Removes references to GameObject
+     * Removes references to GameObject.
      *
      * @param gameObject GameObject to remove
      */
@@ -85,7 +88,7 @@ public abstract class Scene {
     }
 
     /**
-     * Adds new SubSystem to be updated
+     * Adds new SubSystem to be updated.
      *
      * @param system SubSystem to add
      */
@@ -107,8 +110,9 @@ public abstract class Scene {
     }
 
     /**
-     * Get system of given class currently in use
+     * Gets system of given class currently in use.
      *
+     * @param systemClass Class of wanted system
      * @return System of given class
      */
     public <T extends SubSystem> T getSubSystem(Class<T> systemClass) {
@@ -119,6 +123,7 @@ public abstract class Scene {
                 return systemClass.cast(system);
             }
         }
+
         return null;
     }
 }

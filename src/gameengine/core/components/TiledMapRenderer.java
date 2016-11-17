@@ -1,10 +1,9 @@
 package gameengine.core.components;
 
-
 import gameengine.utils.tiled.TiledMap;
 
 /**
- * Component that draws tiled map
+ * Component that draws tiled map.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -13,12 +12,12 @@ import gameengine.utils.tiled.TiledMap;
 public class TiledMapRenderer extends Component{
 
     /**
-     * TiledMap to draw
+     * TiledMap to draw.
      */
     public TiledMap tilemap;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param map Map to draw
      */

@@ -8,7 +8,7 @@ import gameengine.utils.tiled.TiledMapLayer;
 import java.awt.*;
 
 /**
- * Object to draw TiledMapLayer
+ * Object to draw TiledMapLayer.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -17,17 +17,17 @@ import java.awt.*;
 class DrawableTiledLayer extends DrawableObject {
 
     /**
-     * Parent TiledMap
+     * Parent TiledMap.
      */
     private TiledMap map;
 
     /**
-     * TiledMapLayer to draw
+     * TiledMapLayer to draw.
      */
     private TiledMapLayer tiledLayer;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param tiledMapRenderer TiledMapRenderer to get necessary information
      * @param layer To what layer TiledMapLayer will be drawn
@@ -43,7 +43,7 @@ class DrawableTiledLayer extends DrawableObject {
     }
 
     /**
-     * Draws TiledMapLayer
+     * Draws TiledMapLayer.
      *
      * @param g Graphics-object for drawing
      * @param camera Camera for checks

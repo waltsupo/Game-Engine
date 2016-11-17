@@ -1,7 +1,7 @@
 package gameengine.core;
 
 /**
- * Allows Game and Scene related tasks to be done anywhere
+ * Allows Game and Scene related tasks to be done anywhere.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -10,22 +10,22 @@ package gameengine.core;
 public class GameManager {
 
     /**
-     * Scene currently in use
+     * Scene currently in use.
      */
     private static Game game;
 
     /**
-     * Width of content part of the window
+     * Width of content part of the window.
      */
     private static int width;
 
     /**
-     * Height of content part of the window
+     * Height of content part of the window.
      */
     private static int height;
 
     /**
-     * Gets width of the game
+     * Gets width of the game.
      *
      * @return Width of the content part of the window
      */
@@ -35,7 +35,7 @@ public class GameManager {
     }
 
     /**
-     * Sets width of the game
+     * Sets width of the game.
      *
      * @param width New width
      */
@@ -47,7 +47,7 @@ public class GameManager {
     }
 
     /**
-     * Gets width of the game
+     * Gets width of the game.
      *
      * @return Height of the content part of the window
      */
@@ -57,7 +57,7 @@ public class GameManager {
     }
 
     /**
-     * Sets height of the window
+     * Sets height of the window.
      *
      * @param height New height
      */
@@ -69,7 +69,7 @@ public class GameManager {
     }
 
     /**
-     * Sets value for game
+     * Sets value for game.
      *
      * @param newGame New Game
      */
@@ -82,7 +82,7 @@ public class GameManager {
     }
 
     /**
-     * Gets game
+     * Gets game.
      *
      * @return Game
      */
@@ -92,7 +92,7 @@ public class GameManager {
     }
 
     /**
-     * Removes references to given GameObject from Scene
+     * Removes references to given GameObject from Scene.
      *
      * @param gameObject GameObject to remove
      */
@@ -102,7 +102,7 @@ public class GameManager {
     }
 
     /**
-     * Ends game
+     * Ends game.
      */
     public static void endGame() {
 

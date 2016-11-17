@@ -4,14 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
 import gameengine.utils.Files;
 import org.w3c.dom.*;
-import org.xml.sax.SAXException;
 
 /**
- * Contains methods for handling maps
+ * Contains methods for handling maps.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -20,15 +17,16 @@ import org.xml.sax.SAXException;
 public class Maps {
 
     /**
-     * Default path to search assets
+     * Default path to search assets.
      */
     public static String defaultPath = "src/assets/";
 
     /**
-     * Creates new tiled map from the source
+     * Creates new tiled map from the source.
      *
      * @param url Path to source
      * @return Tiled map created from the source
+     * @throws Exception If Something went wrong setting up map loading
      */
     public static TiledMap loadTiledMap(String url) throws Exception {
 
@@ -104,7 +102,7 @@ public class Maps {
     }
 
     /**
-     * Creates new TileSet from given node
+     * Creates new TileSet from given node.
      *
      * @param map TileSet's parent map
      * @param node Node to create TileSet from
@@ -152,7 +150,7 @@ public class Maps {
     }
 
     /**
-     * Creates new tile layer from the node
+     * Creates new tile layer from the node.
      *
      * @param map Parent map
      * @param node Information about the layer
@@ -205,7 +203,7 @@ public class Maps {
     }
 
     /**
-     * Creates new ObjectGroup to the map
+     * Creates new ObjectGroup to the map.
      *
      * @param map Parent map
      * @param node Information about the group

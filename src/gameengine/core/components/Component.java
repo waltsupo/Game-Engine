@@ -1,7 +1,7 @@
 package gameengine.core.components;
 
 /**
- * Abstract class for components to extend
+ * Abstract class for components to extend.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117

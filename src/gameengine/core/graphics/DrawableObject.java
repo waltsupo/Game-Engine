@@ -5,7 +5,7 @@ import gameengine.core.GameObject;
 import java.awt.*;
 
 /**
- * Parent class for Drawable-objects
+ * Parent class for Drawable-objects.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -14,17 +14,17 @@ import java.awt.*;
 abstract class DrawableObject {
 
     /**
-     * Related GameObject
+     * Related GameObject.
      */
     GameObject gameObject;
 
     /**
-     * Object's layer
+     * Object's layer.
      */
     int z;
 
     /**
-     * Draws object
+     * Draws object.
      *
      * @param g Graphics-object for drawing
      * @param camera Camera for checks

@@ -3,7 +3,7 @@ package gameengine.core.components;
 import java.awt.*;
 
 /**
- * Component that draws image
+ * Component that draws image.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -17,7 +17,7 @@ public class SpriteRenderer extends Component {
     public Image image;
 
     /**
-     * Sprite's z-index
+     * Sprite's z-index.
      */
     public int z;
 

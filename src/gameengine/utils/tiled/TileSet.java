@@ -1,14 +1,12 @@
 package gameengine.utils.tiled;
 
 import gameengine.mathlib.Vector;
-import gameengine.utils.Files;
 import java.awt.*;
-import java.io.IOException;
 
 /**
- * TileSet for TiledMap containing textures for tiles
+ * TileSet for TiledMap containing textures for tiles.
  *
- * Doesn't support margins and spacings currently
+ * Doesn't support margins and spacings currently.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -17,42 +15,42 @@ import java.io.IOException;
 public class TileSet {
 
     /**
-     * Image with textures
+     * Image with textures.
      */
     public Image image;
 
     /**
-     * TileSet's name
+     * TileSet's name.
      */
     public String name;
 
     /**
-     * Columns in TileSet
+     * Columns in TileSet.
      */
     public int columns;
 
     /**
-     * Tile width
+     * Tile width.
      */
     public int tileWidth;
 
     /**
-     * Tile height
+     * Tile height.
      */
     public int tileHeight;
 
     /**
-     * Total number of tile textures
+     * Total number of tile textures.
      */
     public int tileCount;
 
     /**
-     * Starting index, used to find right texture from many TileSets
+     * Starting index, used to find right texture from many TileSets.
      */
     public int startIndex;
 
     /**
-     * Default constructor
+     * Default constructor.
      */
     public TileSet() {
 
@@ -66,7 +64,7 @@ public class TileSet {
     }
 
     /**
-     * Returns coordinates for given tile index to be used in drawing
+     * Returns coordinates for given tile index to be used in drawing.
      *
      * @param index Tile index
      * @return Coordinates to texture

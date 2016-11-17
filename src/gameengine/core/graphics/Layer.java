@@ -3,7 +3,7 @@ package gameengine.core.graphics;
 import java.util.ArrayList;
 
 /**
- * Layer that contains objects to draw
+ * Layer that contains objects to draw.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -12,17 +12,17 @@ import java.util.ArrayList;
 class Layer {
 
     /**
-     * Layer's Z-index
+     * Layer's Z-index.
      */
     int z;
 
     /**
-     * DrawableObjects to draw
+     * DrawableObjects to draw.
      */
     ArrayList<DrawableObject> drawables;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param layer Layer's Z-index
      */

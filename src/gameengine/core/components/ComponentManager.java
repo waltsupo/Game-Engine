@@ -10,7 +10,7 @@ import java.util.Map;
  * Class that handles adding components.
  *
  * Has list containing listeners and wanted combination, notifies
- * listeners GameObject has required components
+ * listeners GameObject has required components.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -27,7 +27,7 @@ public class ComponentManager {
     /**
      * Adds new combination to list.
      *
-     * Listener calls this method to get information about new components.
+     * Listener calls method to get information about new components.
      *
      * @param listener ComponentListener that wants information
      * @param components components to listen at
@@ -53,7 +53,7 @@ public class ComponentManager {
     }
 
     /**
-     * Stops listener from getting information about combination of components
+     * Stops listener from getting information about combination of components.
      *
      * @param listener Listener that does not need information anymore
      * @param first Class of the first component on the list
@@ -77,7 +77,7 @@ public class ComponentManager {
     }
 
     /**
-     * Looks if any listener wants information about new component
+     * Looks if any listener wants information about new component.
      *
      * @param gameObject Component's parent GameObject
      * @param component New component
@@ -106,7 +106,7 @@ public class ComponentManager {
                         }
                     }
 
-                    if(hasComponents) {
+                    if (hasComponents) {
                         entry.getKey()
                                 .newGameObject(gameObject, classList.get(0));
                     }

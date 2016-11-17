@@ -3,7 +3,7 @@ package gameengine.core.graphics;
 import gameengine.core.components.Transform;
 
 /**
- * Object to handle moving view
+ * Object to handle moving view.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -12,12 +12,12 @@ import gameengine.core.components.Transform;
 public class Camera {
 
     /**
-     * Position information
+     * Position information.
      */
     public Transform transform;
 
     /**
-     * Constructor for camera
+     * Constructor for camera.
      */
     public Camera() {
 
@@ -37,7 +37,7 @@ public class Camera {
     }
 
     /**
-     * Moves camera to given position
+     * Moves camera to given position.
      *
      * @param x New x-coordinate
      * @param y New y-coordinate

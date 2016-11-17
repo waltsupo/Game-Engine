@@ -4,7 +4,7 @@ import gameengine.core.physics.Physics;
 import gameengine.utils.Config;
 
 /**
- * Main system to run the game
+ * Main system to run the game.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -13,39 +13,41 @@ import gameengine.utils.Config;
 public abstract class Game {
 
     /**
-     * Current Scene
+     * Current Scene.
      *
-     * Used on update/rendering
+     * Used on update/rendering.
      */
     private Scene currentScene;
 
     /**
-     * Window for the application
+     * Window for the application.
      */
     private Window window;
 
     /**
-     * Is game alive or not
+     * Is game alive or not.
      */
     private boolean gameOn;
 
     /**
-     * Max frames per second, restricts rendering
+     * Max frames per second, restricts rendering.
      */
     protected int frameCap;
 
     /**
-     * Max updates per second
+     * Max updates per second.
      */
     protected int updateCap;
 
     /**
-     * Frames per second
+     * Frames per second.
      */
     private int frames;
 
     /**
-     * Constructor, Starts the game loop
+     * Constructor, Starts the game loop.
+     *
+     * @param config Settings for the game
      */
     public Game(Config config) {
 
@@ -57,7 +59,15 @@ public abstract class Game {
         start();
 
         if (currentScene == null) {
+
+            // Create empty scene
             currentScene = new Scene() {
+
+                /**
+                 * Updates scene.
+                 *
+                 * @param delta Elapsed time since last update
+                 */
                 public void update(float delta) {}
             };
         }
@@ -67,7 +77,9 @@ public abstract class Game {
     }
 
     /**
-     * Defines few variables and creates new objects
+     * Defines few variables and creates new objects.
+     *
+     * @param config Settings for the game
      */
     private void setup(Config config) {
 
@@ -83,12 +95,12 @@ public abstract class Game {
     }
 
     /**
-     * Sets user settings before game loop starts
+     * Sets user settings before game loop starts.
      */
     abstract public void start();
 
     /**
-     * Runs the game
+     * Runs the game.
      */
     private void gameLoop() {
 
@@ -107,7 +119,7 @@ public abstract class Game {
         double second = 0;
         frames = 0;
 
-        while(gameOn) {
+        while (gameOn) {
 
             endTime = System.nanoTime();
             delta = (endTime - startTime) / 1000000000.0;
@@ -120,6 +132,12 @@ public abstract class Game {
 
             update((float) delta);
             render();
+
+            if (second >= 1) {
+
+                second--;
+                frames = 0;
+            }
 
             /*// Update if enough time has passed
             if (updateTime >= 1f/updateCap) {
@@ -135,26 +153,21 @@ public abstract class Game {
                 renderTime = 0;
                 render();
             }*/
-
-            if (second >= 1) {
-                second--;
-                //System.out.println("framerate: " + frames);
-                frames = 0;
-            }
         }
     }
 
     /**
-     * Updates the game, for example collisions and calls scene's update
+     * Updates the game, for example collisions and calls scene's update.
+     *
+     * @param delta Elapsed time since last update
      */
     private void update(float delta) {
-
 
         currentScene.updateScene(delta);
     }
 
     /**
-     * Renders game to window
+     * Renders game to window.
      */
     private void render() {
 
@@ -163,7 +176,7 @@ public abstract class Game {
     }
 
     /**
-     * Ends game loop
+     * Ends game loop.
      */
     public void endGame() {
 
@@ -171,7 +184,7 @@ public abstract class Game {
     }
 
     /**
-     * Changes current scene
+     * Changes current scene.
      *
      * @param scene New Scene
      */
@@ -187,7 +200,7 @@ public abstract class Game {
     }
 
     /**
-     * Returns current scene
+     * Returns current scene.
      *
      * @return Current Scene
      */
@@ -197,7 +210,7 @@ public abstract class Game {
     }
 
     /**
-     * Returns current window
+     * Returns current window.
      *
      * @return window used in the game
      */

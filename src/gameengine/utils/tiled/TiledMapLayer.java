@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
- * TiledMapLayer for TileMap, contains tiles to draw
+ * TiledMapLayer for TileMap, contains tiles to draw.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -15,44 +15,44 @@ import java.awt.image.BufferedImage;
 public class TiledMapLayer {
 
     /**
-     * Array of tile indexes, order to render is right-down
+     * Array of tile indexes, order to render is right-down.
      */
     public int[] tiles;
 
     /**
-     * Tiled layer's name
+     * Tiled layer's name.
      */
     public String name;
 
     /**
-     * Layer's width
+     * Layer's width.
      */
     public int width;
 
     /**
-     * Layer's height
+     * Layer's height.
      */
     public int height;
 
     /**
-     * Layer's Z-index
+     * Layer's Z-index.
      */
     public int z;
 
     /**
-     * Image to make drawing faster, layer's tiles will be drawn to this when
-     * drawLayerImage() is called
+     * Image containing all tiles to make drawing faster.
      */
     public Image image;
 
     /**
-     * Creates new image containing all tiles
+     * Creates new image containing all tiles.
      *
      * @param map Parent TiledMap
      */
     public void drawLayerImage(TiledMap map) {
 
-        GraphicsEnvironment env = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsEnvironment env =
+                GraphicsEnvironment.getLocalGraphicsEnvironment();
         GraphicsDevice device = env.getDefaultScreenDevice();
         GraphicsConfiguration config = device.getDefaultConfiguration();
 
@@ -60,7 +60,6 @@ public class TiledMapLayer {
                 width * map.tileWidth,
                 height * map.tileHeight,
                 Transparency.TRANSLUCENT);
-
 
         Graphics g = layerImage.getGraphics();
         TileSet tileset = map.tileSets.get(0);
@@ -96,7 +95,7 @@ public class TiledMapLayer {
     }
 
     /**
-     * Sets z-index of this layer
+     * Sets z-index of this layer.
      *
      * @param z New z-index
      */

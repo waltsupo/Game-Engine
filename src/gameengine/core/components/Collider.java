@@ -6,7 +6,7 @@ import gameengine.mathlib.Shape;
  * Collider-component for handling collisions.
  *
  * Collider has shape and layer to handle collision. Layer collision can be
- * changed using Physics-class
+ * changed using Physics-class.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -15,8 +15,7 @@ import gameengine.mathlib.Shape;
 public class Collider extends Component{
 
     /**
-     * Collider's layer, layers can be used to ignore collision between
-     * objects.
+     * Collider's layer, layers can be used to ignore collision.
      */
     public int layer;
 

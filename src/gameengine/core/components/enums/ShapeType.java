@@ -1,9 +1,9 @@
 package gameengine.core.components.enums;
 
 /**
- * Shape type enums for components
+ * Shape type enums for components.
  *
- * Tells if shape has only borders or not
+ * Tells if shape has only borders or not.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117

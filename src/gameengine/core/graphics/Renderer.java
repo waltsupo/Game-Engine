@@ -8,9 +8,9 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * Handles Drawing
+ * Handles Drawing.
  *
- * Draws all objects that have required components to the screen
+ * Draws all objects that have required components to the screen.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -34,12 +34,12 @@ public class Renderer implements ComponentListener {
     private static Camera camera;
 
     /**
-     * Layers to draw
+     * Layers to draw.
      */
     private ArrayList<Layer> layers;
 
     /**
-     * Background color, default black
+     * Background color, default black.
      */
     private Color background;
 
@@ -72,7 +72,7 @@ public class Renderer implements ComponentListener {
 
         // Background color
         g.setColor(background);
-        g.fillRect(0,0,GameManager.getWidth(), GameManager.getHeight());
+        g.fillRect(0, 0, GameManager.getWidth(), GameManager.getHeight());
 
         g.translate(-camera.transform.x, -camera.transform.y);
 
@@ -91,7 +91,7 @@ public class Renderer implements ComponentListener {
     }
 
     /**
-     * Returns current camera
+     * Returns current camera.
      *
      * @return Camera used by renderer
      */
@@ -101,13 +101,12 @@ public class Renderer implements ComponentListener {
     }
 
     /**
-     * Adds DrawableObject to correct layer to be drawn
+     * Adds DrawableObject to correct layer to be drawn.
      *
      * @param gameObject GameObject that has required components
      * @param comClass Component class first on the combination list
      */
     public void newGameObject(GameObject gameObject, Class comClass) {
-
 
         if (comClass == SpriteRenderer.class) {
 
@@ -128,7 +127,7 @@ public class Renderer implements ComponentListener {
     }
 
     /**
-     * Adds drawable to correct layer
+     * Adds drawable to correct layer.
      *
      * @param drawable Drawable to add
      */
@@ -181,7 +180,7 @@ public class Renderer implements ComponentListener {
     }
 
     /**
-     * Sets background color to given color
+     * Sets background color to given color.
      *
      * @param color New background color
      */

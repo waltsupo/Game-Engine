@@ -3,7 +3,7 @@ package gameengine.core.physics;
 import gameengine.core.Scene;
 
 /**
- * Allows physics related tasks to be completed from anywhere anytime
+ * Allows physics related tasks to be completed from anywhere anytime.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1117
@@ -12,12 +12,12 @@ import gameengine.core.Scene;
 public class Physics {
 
     /**
-     * Scene currently in use
+     * Scene currently in use.
      */
     private static Scene scene;
 
     /**
-     * Sets current scene
+     * Sets current scene.
      *
      * @param newScene New scene
      */
@@ -27,13 +27,14 @@ public class Physics {
     }
 
     /**
-     * Ignore collision between 2 layers
+     * Ignores collision between 2 layers.
      *
      * @param layer1 Layer 1
      * @param layer2 Layer 2
      */
     public static void ignoreLayerCollision(int layer1, int layer2) {
 
-        scene.getSubSystem(Collisions.class).ignoreLayerCollision(layer1, layer2);
+        scene.getSubSystem(Collisions.class)
+                .ignoreLayerCollision(layer1, layer2);
     }
 }
