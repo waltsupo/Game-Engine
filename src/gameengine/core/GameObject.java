@@ -145,7 +145,7 @@ public class GameObject {
 
         if (toRemove != null) {
 
-            ComponentManager.removeComponent(this, comClass);
+            ComponentManager.removeComponent(this, toRemove);
             components.remove(toRemove);
         }
     }

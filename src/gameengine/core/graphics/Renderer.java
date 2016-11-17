@@ -117,7 +117,6 @@ public class Renderer implements ComponentListener {
      */
     public void newComponent(GameObject gameObject, Component component) {
 
-
         if (component instanceof SpriteRenderer) {
 
             addDrawable(new DrawableSprite(gameObject,

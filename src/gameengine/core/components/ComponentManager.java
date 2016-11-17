@@ -120,9 +120,10 @@ public class ComponentManager {
      * been removed.
      *
      * @param gameObject Component's parent GameObject
-     * @param comClass Class of removed component
+     * @param component Component to remove
      */
-    public static void removeComponent(GameObject gameObject, Class comClass) {
+    public static void removeComponent(GameObject gameObject,
+                                       Component component) {
 
 
         // Loop every entry in combinations
@@ -134,7 +135,7 @@ public class ComponentManager {
                 ArrayList<Class> classList = entry.getValue().get(index);
 
                 // If contains new component's class
-                if (classList.contains(comClass)) {
+                if (classList.contains(component.getClass())) {
 
                     boolean hasComponents = true;
 
