@@ -9,6 +9,6 @@ package gameengine.core;
  */
 public interface SubSystem {
 
-    void update();
+    void update(float delta);
     void removeGameObject(GameObject gameObject);
 }

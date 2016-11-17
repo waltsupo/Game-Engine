@@ -40,9 +40,9 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Goes through every collider and looks if they collide with each other.
+     * Goes through every Collider and looks if they collide with each other.
      */
-    public void update() {
+    public void update(float delta) {
 
         for (int colIndex1 = 0; colIndex1 < collisionObjs.size(); colIndex1++) {
             Collider col1 = collisionObjs.get(colIndex1).

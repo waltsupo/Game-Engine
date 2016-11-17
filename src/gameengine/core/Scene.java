@@ -45,12 +45,12 @@ public abstract class Scene {
     /**
      * Updates scene, handles engine side of update
      */
-    public void updateScene() {
+    public void updateScene(float delta) {
 
-        update();
+        update(delta);
 
         for (SubSystem system : systems) {
-            system.update();
+            system.update(delta);
         }
     }
 
@@ -65,7 +65,7 @@ public abstract class Scene {
     /**
      * Updates scene, called once every update.
      */
-    abstract public void update();
+    abstract public void update(float delta);
 
 
     /**

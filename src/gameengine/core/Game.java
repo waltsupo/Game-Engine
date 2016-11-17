@@ -54,7 +54,7 @@ public abstract class Game {
 
         if (currentScene == null) {
             currentScene = new Scene() {
-                public void update() {}
+                public void update(float delta) {}
             };
         }
 
@@ -113,7 +113,7 @@ public abstract class Game {
             updateTime += delta;
             second += delta;
 
-            update();
+            update((float) delta);
             render();
             Time.delta = delta;
             /*// Update if enough time has passed
@@ -142,10 +142,10 @@ public abstract class Game {
     /**
      * Updates the game, for example collisions and calls scene's update.
      */
-    private void update() {
+    private void update(float delta) {
 
 
-        currentScene.updateScene();
+        currentScene.updateScene(delta);
     }
 
     /**

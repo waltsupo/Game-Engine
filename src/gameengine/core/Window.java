@@ -8,7 +8,7 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 
 /**
- * Window for teh game.
+ * Window for the game.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1002
@@ -87,7 +87,7 @@ public class Window {
         try {
             canvas.createBufferStrategy(2, config.getBufferCapabilities());
         } catch (AWTException e) {
-            e.printStackTrace();
+            e.printStackTrace(); // TODO exception
         }
         bStrat = canvas.getBufferStrategy();
 
