@@ -1,5 +1,6 @@
 package gameengine.core.graphics;
 
+import gameengine.core.GameObject;
 import gameengine.core.components.SpriteRenderer;
 import gameengine.core.components.Transform;
 import java.awt.Graphics2D;
@@ -14,11 +15,6 @@ import java.awt.Graphics2D;
 public class DrawableSprite extends DrawableObject {
 
     /**
-     * Location information
-     */
-    private Transform transform;
-
-    /**
      * What to draw
      */
     private SpriteRenderer spriteRenderer;
@@ -26,14 +22,14 @@ public class DrawableSprite extends DrawableObject {
     /**
      * Constructor
      *
-     * @param transform Location
+     * @param gameObject Related GameObject
      * @param spriteRenderer What to draw
      */
-    public DrawableSprite(Transform transform, SpriteRenderer spriteRenderer) {
+    public DrawableSprite(GameObject gameObject, SpriteRenderer spriteRenderer) {
 
-        this.transform = transform;
+        this.gameObject = gameObject;
         this.spriteRenderer = spriteRenderer;
-        layer = spriteRenderer.layer;
+        z = spriteRenderer.layer;
     }
 
     /**
@@ -45,9 +41,9 @@ public class DrawableSprite extends DrawableObject {
     @Override
     public void draw(Graphics2D g, Camera camera) {
 
-        g.drawImage(spriteRenderer.image, (int) transform.x,
-                (int) (transform.y + transform.height),
-                (int) transform.width,
-                (int) -transform.height, null);
+        g.drawImage(spriteRenderer.image, (int) gameObject.transform.x,
+                (int) (gameObject.transform.y + gameObject.transform.height),
+                (int) gameObject.transform.width,
+                (int) -gameObject.transform.height, null);
     }
 }

@@ -1,5 +1,6 @@
 package gameengine.core.graphics;
 
+import gameengine.core.GameObject;
 import gameengine.core.components.ShapeRenderer;
 import gameengine.core.components.Transform;
 import gameengine.core.components.enums.ShapeType;
@@ -18,11 +19,6 @@ import java.awt.Graphics2D;
 public class DrawableShape extends DrawableObject {
 
     /**
-     * Location information
-     */
-    private Transform transform;
-
-    /**
      * What to draw
      */
     private ShapeRenderer shapeRenderer;
@@ -30,14 +26,14 @@ public class DrawableShape extends DrawableObject {
     /**
      * Constructor
      *
-     * @param transform Location information
+     * @param gameObject Related GameObject
      * @param shapeRenderer What to draw
      */
-    public DrawableShape(Transform transform, ShapeRenderer shapeRenderer) {
+    public DrawableShape(GameObject gameObject, ShapeRenderer shapeRenderer) {
 
-        this.transform = transform;
+        this.gameObject = gameObject;
         this.shapeRenderer = shapeRenderer;
-        layer = shapeRenderer.layer;
+        z = shapeRenderer.layer;
     }
 
     /**
@@ -50,9 +46,9 @@ public class DrawableShape extends DrawableObject {
     public void draw(Graphics2D g, Camera camera) {
 
         if (shapeRenderer.shape == Shapes.RECTANGLE) {
-            Rectangle rect = new Rectangle(transform.x,
-                    transform.y,
-                    transform.width, transform.height);
+            Rectangle rect = new Rectangle(gameObject.transform.x,
+                    gameObject.transform.y,
+                    gameObject.transform.width, gameObject.transform.height);
             drawRectangle(g, rect, shapeRenderer.color, shapeRenderer.type);
         }
     }

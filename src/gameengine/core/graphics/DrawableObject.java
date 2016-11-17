@@ -1,5 +1,7 @@
 package gameengine.core.graphics;
 
+import gameengine.core.GameObject;
+
 import java.awt.*;
 
 /**
@@ -12,9 +14,14 @@ import java.awt.*;
 abstract class DrawableObject {
 
     /**
+     * Related GameObject
+     */
+    public GameObject gameObject;
+
+    /**
      * Object's layer
      */
-    public int layer;
+    public int z;
 
     /**
      * Draws object

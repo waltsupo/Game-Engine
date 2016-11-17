@@ -120,18 +120,18 @@ public class Renderer implements ComponentListener {
 
         if (component instanceof SpriteRenderer) {
 
-            addDrawable(new DrawableSprite(gameObject.transform,
+            addDrawable(new DrawableSprite(gameObject,
                     (SpriteRenderer)component));
         } else if (component instanceof ShapeRenderer) {
 
-            addDrawable(new DrawableShape(gameObject.transform,
+            addDrawable(new DrawableShape(gameObject,
                     (ShapeRenderer)component));
         } else if (component instanceof TiledMapRenderer) {
 
             TiledMap map = ((TiledMapRenderer) component).tilemap;
 
             for (TiledMapLayer layer : map.layers) {
-                addDrawable(new DrawableTiledLayer(
+                addDrawable(new DrawableTiledLayer(gameObject,
                         (TiledMapRenderer) component, layer));
             }
         }
@@ -152,7 +152,7 @@ public class Renderer implements ComponentListener {
             for (Layer layer : layers) {
 
                 // If layer with same Z-index is found
-                if (layer.z == drawable.layer) {
+                if (layer.z == drawable.z) {
 
                     layer.drawables.add(drawable);
                     found = true;
@@ -163,7 +163,7 @@ public class Renderer implements ComponentListener {
             // If no layer with same Z-index, create new layer
             if (!found) {
 
-                Layer layer = new Layer(drawable.layer);
+                Layer layer = new Layer(drawable.z);
                 layer.drawables.add(drawable);
 
                 boolean isLast = true;
@@ -184,7 +184,7 @@ public class Renderer implements ComponentListener {
                 }
             }
         } else {
-            Layer layer = new Layer(drawable.layer);
+            Layer layer = new Layer(drawable.z);
             layer.drawables.add(drawable);
             layers.add(layer);
         }

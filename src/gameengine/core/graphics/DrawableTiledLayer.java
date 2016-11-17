@@ -1,5 +1,7 @@
 package gameengine.core.graphics;
 
+import gameengine.core.Game;
+import gameengine.core.GameObject;
 import gameengine.core.components.TiledMapRenderer;
 import gameengine.mathlib.Vector;
 import gameengine.utils.tiled.TileSet;
@@ -38,13 +40,15 @@ public class DrawableTiledLayer extends DrawableObject {
      * @param tiledMapRenderer TiledMapRenderer to get necessary information
      * @param layer To what layer TiledMapLayer will be drawn
      */
-    public DrawableTiledLayer(TiledMapRenderer tiledMapRenderer,
+    public DrawableTiledLayer(GameObject gameObject,
+                              TiledMapRenderer tiledMapRenderer,
                               TiledMapLayer layer) {
 
+        this.gameObject = gameObject;
         this.tiledMapRenderer = tiledMapRenderer;
         map = tiledMapRenderer.tilemap;
         tiledLayer = layer;
-        this.layer = layer.z;
+        this.z = layer.z;
     }
 
     // TODO Draw only visible part
