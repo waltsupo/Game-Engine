@@ -73,13 +73,12 @@ public abstract class Scene {
      *
      * @param gameObject GameObject to remove
      */
-    public void deleteGameObject(GameObject gameObject) {
+    public void removeGameObject(GameObject gameObject) {
 
-        // TODO remove at the end of frame?
         gameObjects.remove(gameObject);
 
         for (SubSystem system : systems) {
-            system.deleteGameObject(gameObject);
+            system.removeGameObject(gameObject);
         }
 
         renderer.deleteGameObject(gameObject);

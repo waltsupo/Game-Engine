@@ -10,5 +10,5 @@ package gameengine.core;
 public interface SubSystem {
 
     void update();
-    void deleteGameObject(GameObject gameObject);
+    void removeGameObject(GameObject gameObject);
 }

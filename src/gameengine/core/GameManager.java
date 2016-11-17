@@ -96,9 +96,9 @@ public class GameManager {
      *
      * @param gameObject GameObject to remove
      */
-    public static void deleteGameObject(GameObject gameObject) {
+    public static void removeGameObject(GameObject gameObject) {
 
-        game.getScene().deleteGameObject(gameObject);
+        game.getScene().removeGameObject(gameObject);
     }
 
     /**

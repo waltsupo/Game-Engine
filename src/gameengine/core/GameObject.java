@@ -169,23 +169,12 @@ public class GameObject {
     /**
      * Deletes all references to this and to childs.
      */
-    public void delete() {
-
-        GameManager.deleteGameObject(this);
+    public void remove() {
 
         parent = null;
         childs = null;
         components.clear();
 
-        /*ArrayList<Component> remove = new ArrayList<>(components);
-
-        for (Component component : remove) {
-            removeComponent(component.getClass());
-        }
-
-
-        for (GameObject gameObject : childs) {
-            gameObject.delete();
-        }*/
+        GameManager.removeGameObject(this);
     }
 }

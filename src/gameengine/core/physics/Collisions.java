@@ -199,13 +199,13 @@ public class Collisions implements ComponentListener, SubSystem {
 
         collisionObjs.add(gameObject);
     }
-    
+
     /**
      * Removes all references to object in this class.
      *
      * @param gameObject to remove
      */
-    public void deleteGameObject(GameObject gameObject) {
+    public void removeGameObject(GameObject gameObject) {
 
         collisionObjs.remove(gameObject);
     }

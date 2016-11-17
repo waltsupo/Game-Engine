@@ -202,12 +202,23 @@ public class Renderer implements ComponentListener {
     /**
      * Removes GameObject from lists.
      *
-     * @param gameObject gameobject to remove
+     * @param gameObject GameObject to remove
      */
     public void deleteGameObject(GameObject gameObject) {
 
-        // TODO delete gameobject
-        //shapesToDraw.remove(gameObject);
-        //spritesToDraw.remove(gameObject);
+        for (Layer layer : layers) {
+
+            ArrayList<DrawableObject> toRemove = new ArrayList<>();
+
+            for (DrawableObject drawable : layer.drawables) {
+                if (drawable.gameObject == gameObject) {
+                    toRemove.add(drawable);
+                }
+            }
+
+            for (DrawableObject drawable : toRemove) {
+                layer.drawables.remove(drawable);
+            }
+        }
     }
 }
