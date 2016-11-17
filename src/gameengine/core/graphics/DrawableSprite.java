@@ -23,12 +23,11 @@ public class DrawableSprite extends DrawableObject {
      * Constructor
      *
      * @param gameObject Related GameObject
-     * @param spriteRenderer What to draw
      */
-    public DrawableSprite(GameObject gameObject, SpriteRenderer spriteRenderer) {
+    public DrawableSprite(GameObject gameObject) {
 
         this.gameObject = gameObject;
-        this.spriteRenderer = spriteRenderer;
+        spriteRenderer = gameObject.getComponent(SpriteRenderer.class);
         z = spriteRenderer.layer;
     }
 

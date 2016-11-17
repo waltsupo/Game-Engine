@@ -108,7 +108,8 @@ public class ComponentManager {
                     }
 
                     if(hasComponents) {
-                        entry.getKey().newComponent(gameObject, component);
+                        entry.getKey()
+                                .newGameObject(gameObject, classList.get(0));
                     }
                 }
             }

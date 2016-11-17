@@ -17,9 +17,9 @@ public interface ComponentListener {
      * Handles new GameObject that has required components.
      *
      * @param gameObject GameObject that has required components
-     * @param component Component that was created
+     * @param comClass Component class first on the combination list
      */
-    void newComponent(GameObject gameObject, Component component);
+    void newGameObject(GameObject gameObject, Class comClass);
 
     /**
      * Handles removing GameObject that no longer has required components.

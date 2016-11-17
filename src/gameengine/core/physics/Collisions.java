@@ -192,11 +192,10 @@ public class Collisions implements ComponentListener, SubSystem {
      * Adds gameobject to list to look collisions for.
      *
      * @param gameObject Gameobject that has required components
-     * @param component First class on combination list, used to separate
-     *              different combination on one listener
+     * @param comClass Component class first on the combination list
      */
     @Override
-    public void newComponent(GameObject gameObject, Component component) {
+    public void newGameObject(GameObject gameObject, Class comClass) {
 
         collisionObjs.add(gameObject);
     }

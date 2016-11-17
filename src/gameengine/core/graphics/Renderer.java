@@ -113,25 +113,25 @@ public class Renderer implements ComponentListener {
      * Adds DrawableObject to correct layer to be drawn
      *
      * @param gameObject GameObject that has required components
-     * @param component Component that was created
+     * @param comClass Component class first on the combination list
      */
-    public void newComponent(GameObject gameObject, Component component) {
+    public void newGameObject(GameObject gameObject, Class comClass) {
 
-        if (component instanceof SpriteRenderer) {
 
-            addDrawable(new DrawableSprite(gameObject,
-                    (SpriteRenderer)component));
-        } else if (component instanceof ShapeRenderer) {
+        if (comClass == SpriteRenderer.class) {
 
-            addDrawable(new DrawableShape(gameObject,
-                    (ShapeRenderer)component));
-        } else if (component instanceof TiledMapRenderer) {
+            addDrawable(new DrawableSprite(gameObject));
+        } else if (comClass == ShapeRenderer.class) {
 
-            TiledMap map = ((TiledMapRenderer) component).tilemap;
+            addDrawable(new DrawableShape(gameObject));
+        } else if (comClass == TiledMapRenderer.class) {
 
-            for (TiledMapLayer layer : map.layers) {
-                addDrawable(new DrawableTiledLayer(gameObject,
-                        (TiledMapRenderer) component, layer));
+            TiledMapRenderer mapRenderer =
+                    gameObject.getComponent(TiledMapRenderer.class);
+
+            for (TiledMapLayer layer : mapRenderer.tilemap.layers) {
+                addDrawable(new DrawableTiledLayer(
+                        gameObject, mapRenderer, layer));
             }
         }
     }

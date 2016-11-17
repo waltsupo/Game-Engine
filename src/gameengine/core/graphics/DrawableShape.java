@@ -27,12 +27,11 @@ public class DrawableShape extends DrawableObject {
      * Constructor
      *
      * @param gameObject Related GameObject
-     * @param shapeRenderer What to draw
      */
-    public DrawableShape(GameObject gameObject, ShapeRenderer shapeRenderer) {
+    public DrawableShape(GameObject gameObject) {
 
         this.gameObject = gameObject;
-        this.shapeRenderer = shapeRenderer;
+        shapeRenderer = gameObject.getComponent(ShapeRenderer.class);
         z = shapeRenderer.layer;
     }
 
