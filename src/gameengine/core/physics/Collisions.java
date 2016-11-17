@@ -14,23 +14,23 @@ import java.util.HashMap;
  * Has information on all Colliders, and methods to check collision
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
 public class Collisions implements ComponentListener, SubSystem {
 
     /**
-     * gameobjects that has required component to check collision.
+     * GameObjects that has required component to check collision
      */
     private ArrayList<GameObject> collisionObjs;
 
     /**
-     * Layer map, tells which layers ignore each other.
+     * Layer map, tells which layers ignore each other
      */
     private HashMap<Integer, ArrayList<Integer>> layers;
 
     /**
-     * Defines values and starts listening components.
+     * Defines values and starts listening components
      */
     public Collisions() {
 
@@ -40,7 +40,7 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Goes through every Collider and looks if they collide with each other.
+     * Goes through every Collider and looks if they collide with each other
      */
     public void update(float delta) {
 
@@ -73,7 +73,7 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Checks if rectangle collides with any other collider.
+     * Checks if rectangle collides with any other collider
      *
      * @param rect Rectangle to check collision for
      * @param layer Rectangle's layer
@@ -99,7 +99,7 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Tells if layers collide.
+     * Tells if layers collide
      *
      * @param layer Layer
      * @param layer2 Layer
@@ -125,7 +125,7 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Ignores collision between two layers.
+     * Ignores collision between two layers
      *
      * @param layer Layer
      * @param layer2 Layer
@@ -150,7 +150,7 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Checks collisions for collider.
+     * Checks collisions for collider
      *
      * @param col collider to look collisions for
      * @return true if collides
@@ -174,7 +174,7 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Checks collision between two colliders.
+     * Checks collision between two colliders
      *
      * @param col1 Collider 1
      * @param col2 COllider 2
@@ -189,7 +189,7 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Adds gameobject to list to look collisions for.
+     * Adds gameobject to list to look collisions for
      *
      * @param gameObject Gameobject that has required components
      * @param comClass Component class first on the combination list
@@ -201,7 +201,7 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Removes all references to object in this class.
+     * Removes all references to object in this class
      *
      * @param gameObject to remove
      */

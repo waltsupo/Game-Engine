@@ -1,13 +1,12 @@
 package gameengine.core.graphics;
 
 import gameengine.core.components.Transform;
-import gameengine.core.GameObject;
 
 /**
- * Object to handle moving view.
+ * Object to handle moving view
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
 public class Camera {

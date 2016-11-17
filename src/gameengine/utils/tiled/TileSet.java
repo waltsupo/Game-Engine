@@ -2,11 +2,7 @@ package gameengine.utils.tiled;
 
 import gameengine.mathlib.Vector;
 import gameengine.utils.Files;
-
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 
 /**
@@ -15,7 +11,7 @@ import java.io.IOException;
  * Doesn't support margins and spacings currently
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1114
+ * @version 2016.1117
  * @since 1.7
  */
 public class TileSet {
@@ -98,15 +94,5 @@ public class TileSet {
         coords.x = (index % columns) * tileWidth;
 
         return coords;
-        /*if (index >= startIndex && index < startIndex + tileCount) {
-            Vector coords = new Vector(0, 0);
-
-            coords.y = (int) Math.floor(index / columns) * tileHeight;
-            coords.x = (index % columns) * tileWidth;
-
-            return coords;
-        } else {
-            return null;
-        }*/
     }
 }

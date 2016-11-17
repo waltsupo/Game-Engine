@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
  * TiledMapLayer for TileMap, contains tiles to draw
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1114
+ * @version 2016.1117
  * @since 1.7
  */
 public class TiledMapLayer {

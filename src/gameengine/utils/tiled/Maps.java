@@ -1,23 +1,34 @@
 package gameengine.utils.tiled;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import gameengine.mathlib.Vector;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
+
 /**
- * Created by valts on 21.10.2016.
+ * Contains methods for handling maps
+ *
+ * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
+ * @version 2016.1117
+ * @since 1.7
  */
 public class Maps {
 
+    /**
+     * Default path to search assets
+     */
     public static String defaultPath = "src/assets/";
 
+    /**
+     * Creates new tiled map from the source
+     *
+     * @param url Path to source
+     * @return Tiled map created from the source
+     */
     public static TiledMap loadTiledMap(String url) {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -100,6 +111,12 @@ public class Maps {
         return map;
     }
 
+    /**
+     * Creates new TileSet from given node
+     *
+     * @param map TileSet's parent map
+     * @param node Node to create TileSet from
+     */
     private static void newTileSet(TiledMap map, Node node) {
 
         // Get image node
@@ -141,6 +158,13 @@ public class Maps {
         map.tileSets.add(set);
     }
 
+    /**
+     * Creates new tile layer from the node
+     *
+     * @param map Parent map
+     * @param node Information about the layer
+     * @param z Z-index
+     */
     private static void newTileLayer(TiledMap map, Node node, int z) {
 
         // Get data node
@@ -187,6 +211,12 @@ public class Maps {
         map.layers.add(layer);
     }
 
+    /**
+     * Creates new ObjectGroup to the map
+     *
+     * @param map Parent map
+     * @param node Information about the group
+     */
     private static void addObjectGroup(TiledMap map, Node node) {
 
         TiledObjectGroup objectLayer = new TiledObjectGroup();

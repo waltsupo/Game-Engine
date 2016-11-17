@@ -4,7 +4,7 @@ package gameengine.utils;
  * Object that contains information about game's properties
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1111
+ * @version 2016.1117
  * @since 1.7
  */
 public class Config {
@@ -37,7 +37,7 @@ public class Config {
     }
 
     /**
-     * Constuctor
+     * Constuctor with width and height for the game
      *
      * @param width Width of the game window
      * @param height Height of the game window

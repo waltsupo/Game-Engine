@@ -9,7 +9,7 @@ import java.awt.Graphics2D;
  * Object to draw image
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1111
+ * @version 2016.1117
  * @since 1.7
  */
 public class DrawableSprite extends DrawableObject {
@@ -28,7 +28,7 @@ public class DrawableSprite extends DrawableObject {
 
         this.gameObject = gameObject;
         spriteRenderer = gameObject.getComponent(SpriteRenderer.class);
-        z = spriteRenderer.layer;
+        z = spriteRenderer.z;
     }
 
     /**

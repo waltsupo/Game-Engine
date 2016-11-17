@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * TiledMap object group
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.fi
- * @version 2016.1114
+ * @version 2016.1117
  * @since 1.7
  **/
 public class TiledObjectGroup {

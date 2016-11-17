@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
- * Scene, user can create multiple scenes and switch between those.
+ * Scene, user can create multiple scenes and switch between those
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
 public abstract class Scene {

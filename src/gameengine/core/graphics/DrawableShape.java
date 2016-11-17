@@ -2,7 +2,6 @@ package gameengine.core.graphics;
 
 import gameengine.core.GameObject;
 import gameengine.core.components.ShapeRenderer;
-import gameengine.core.components.Transform;
 import gameengine.core.components.enums.ShapeType;
 import gameengine.core.components.enums.Shapes;
 import gameengine.mathlib.Rectangle;
@@ -13,7 +12,7 @@ import java.awt.Graphics2D;
  * Object to draw shape
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1111
+ * @version 2016.1117
  * @since 1.7
  */
 public class DrawableShape extends DrawableObject {
@@ -32,7 +31,7 @@ public class DrawableShape extends DrawableObject {
 
         this.gameObject = gameObject;
         shapeRenderer = gameObject.getComponent(ShapeRenderer.class);
-        z = shapeRenderer.layer;
+        z = shapeRenderer.z;
     }
 
     /**

@@ -8,38 +8,38 @@ import gameengine.core.components.Transform;
 import java.util.ArrayList;
 
 /**
- * Class for all GameObject to extends.
+ * Class for all GameObject to extends
  *
  * Contains values/methods common for every GameObject
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
 public class GameObject {
 
     /**
-     * List containing all components.
+     * List containing all components
      */
     final private ArrayList<Component> components;
 
     /**
-     * Parent object.
+     * Parent object
      */
     private GameObject parent;
 
     /**
-     * List containing all child objects.
+     * List containing all child objects
      */
     private ArrayList<GameObject> childs;
 
     /**
-     * Transform component.
+     * Transform component
      */
     final public Transform transform;
 
     /**
-     * Defines values, and creates transform component.
+     * Defines values, and creates transform component
      */
     public GameObject() {
 
@@ -52,7 +52,7 @@ public class GameObject {
     }
 
     /**
-     * Moves object and it's child objects to given position.
+     * Moves object and it's child objects to given position
      *
      * @param x New x-coordinate
      * @param y New y-coordinate
@@ -68,7 +68,7 @@ public class GameObject {
     }
 
     /**
-     * Moves object and it's child objects by given amount.
+     * Moves object and it's child objects by given amount
      *
      * @param x Change on x-axis
      * @param y Change on y-axis
@@ -84,7 +84,7 @@ public class GameObject {
     }
 
     /**
-     * Sets parent object.
+     * Sets parent object
      *
      * @param parent New parent
      */
@@ -97,7 +97,7 @@ public class GameObject {
     }
 
     /**
-     * Adds child object.
+     * Adds child object
      *
      * @param child New child
      */
@@ -109,7 +109,7 @@ public class GameObject {
     }
 
     /**
-     * Removes child object.
+     * Removes child object
      *
      * @param child Child to remove
      */
@@ -135,7 +135,7 @@ public class GameObject {
     }
 
     /**
-     * Returns component of given class.
+     * Returns component of given class
      *
      * @param comClass component's class
      * @return component of given class
@@ -156,7 +156,7 @@ public class GameObject {
     }
 
     /**
-     * Handles collision and returns if collision was handled.
+     * Handles collision and returns if collision was handled
      *
      * @param col Other Collider
      * @return If collision was handled
@@ -167,7 +167,7 @@ public class GameObject {
     }
 
     /**
-     * Deletes all references to this and to childs.
+     * Deletes all references to this and to childs
      */
     public void remove() {
 

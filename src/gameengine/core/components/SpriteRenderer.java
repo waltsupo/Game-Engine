@@ -1,16 +1,15 @@
 package gameengine.core.components;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 /**
  * Component that draws image
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
-public class SpriteRenderer extends DrawComponent {
+public class SpriteRenderer extends Component {
 
     /**
      * Image to draw.
@@ -18,14 +17,19 @@ public class SpriteRenderer extends DrawComponent {
     public Image image;
 
     /**
+     * Sprite's z-index
+     */
+    public int z;
+
+    /**
      * Defines attributes.
      *
      * @param image Image to draw
-     * @param layer Layer where image should be drawn
+     * @param z Layer where image should be drawn
      */
-    public SpriteRenderer(Image image, int layer) {
+    public SpriteRenderer(Image image, int z) {
 
-        this.layer = (byte) layer;
+        this.z = z;
         this.image = image;
     }
 }

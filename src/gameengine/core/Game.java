@@ -2,26 +2,25 @@ package gameengine.core;
 
 import gameengine.core.physics.Physics;
 import gameengine.utils.Config;
-import gameengine.utils.Time;
 
 /**
- * Main Class, runs the game.
+ * Main system to run the game
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
 public abstract class Game {
 
     /**
-     * Current Scene.
+     * Current Scene
      *
      * Used on update/rendering
      */
     private Scene currentScene;
 
     /**
-     * Window for the application.
+     * Window for the application
      */
     private Window window;
 
@@ -31,17 +30,22 @@ public abstract class Game {
     private boolean gameOn;
 
     /**
-     * Max frames per second, restricts rendering.
+     * Max frames per second, restricts rendering
      */
     protected int frameCap;
 
     /**
-     * Max updates per second.
+     * Max updates per second
      */
     protected int updateCap;
 
     /**
-     * Constructor, Starts the gameloop.
+     * Frames per second
+     */
+    private int frames;
+
+    /**
+     * Constructor, Starts the game loop
      */
     public Game(Config config) {
 
@@ -63,7 +67,7 @@ public abstract class Game {
     }
 
     /**
-     * Defines few variables and creates new objects.
+     * Defines few variables and creates new objects
      */
     private void setup(Config config) {
 
@@ -78,12 +82,13 @@ public abstract class Game {
         gameOn = true;
     }
 
+    /**
+     * Sets user settings before game loop starts
+     */
     abstract public void start();
 
-
-    private int frames;
     /**
-     * Runs the game.
+     * Runs the game
      */
     private void gameLoop() {
 
@@ -115,7 +120,7 @@ public abstract class Game {
 
             update((float) delta);
             render();
-            Time.delta = delta;
+
             /*// Update if enough time has passed
             if (updateTime >= 1f/updateCap) {
 
@@ -140,7 +145,7 @@ public abstract class Game {
     }
 
     /**
-     * Updates the game, for example collisions and calls scene's update.
+     * Updates the game, for example collisions and calls scene's update
      */
     private void update(float delta) {
 
@@ -166,7 +171,7 @@ public abstract class Game {
     }
 
     /**
-     * Changes current scene.
+     * Changes current scene
      *
      * @param scene New Scene
      */
@@ -182,7 +187,7 @@ public abstract class Game {
     }
 
     /**
-     * Returns current scene.
+     * Returns current scene
      *
      * @return Current Scene
      */
@@ -192,7 +197,7 @@ public abstract class Game {
     }
 
     /**
-     * Returns current window.
+     * Returns current window
      *
      * @return window used in the game
      */

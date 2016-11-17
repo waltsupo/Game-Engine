@@ -6,7 +6,7 @@ import gameengine.core.Scene;
  * Allows physics related tasks to be completed from anywhere anytime
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1019
+ * @version 2016.1117
  * @since 1.7
  */
 public class Physics {

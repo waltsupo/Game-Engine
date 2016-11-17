@@ -1,26 +1,26 @@
 package gameengine.mathlib;
 
 /**
- * Rectangle class for collisions and drawing.
+ * Rectangle class for collisions and drawing
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.fi
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
 public class Rectangle extends Shape{
 
     /**
-     * Width.
+     * Width
      */
     public float width;
 
     /**
-     * Height.
+     * Height
      */
     public float height;
 
     /**
-     * Defines values.
+     * Defines values
      */
     public Rectangle() {
 
@@ -31,7 +31,7 @@ public class Rectangle extends Shape{
     }
 
     /**
-     * Defines values.
+     * Defines values
      *
      * @param x X-coordinate
      * @param y Y-coordinate
@@ -47,7 +47,7 @@ public class Rectangle extends Shape{
     }
 
     /**
-     * Tells if rectangle contains given point.
+     * Tells if rectangle contains given point
      *
      * @param x Point's x-coordinate
      * @param y Point's y-coordinate
@@ -66,7 +66,7 @@ public class Rectangle extends Shape{
     }
 
     /**
-     * Looks if rectangle collides with given shape.
+     * Looks if rectangle collides with given shape
      *
      * @param shape Other shape
      * @return true if collides
@@ -83,7 +83,7 @@ public class Rectangle extends Shape{
     }
 
     /**
-     * Looks if rectangle collides with other rectangle.
+     * Looks if rectangle collides with other rectangle
      *
      * @param rect Other rectangle
      * @return true if collides

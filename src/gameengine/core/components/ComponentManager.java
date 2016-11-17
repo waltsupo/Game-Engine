@@ -7,14 +7,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Class that handles adding/removing components.
+ * Class that handles adding components.
  *
  * Has list containing listeners and wanted combination, notifies
- * listeners if changes happen relating to their
- * wanted components.
+ * listeners GameObject has required components
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
 public class ComponentManager {

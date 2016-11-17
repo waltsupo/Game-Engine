@@ -2,27 +2,18 @@ package gameengine.core.graphics;
 
 import gameengine.core.*;
 import gameengine.core.components.*;
-import gameengine.core.components.Component;
-import gameengine.core.components.enums.ShapeType;
-import gameengine.core.components.enums.Shapes;
 import gameengine.core.Window;
-import gameengine.mathlib.*;
-import gameengine.mathlib.Rectangle;
-import gameengine.utils.tiled.TileSet;
-import gameengine.utils.tiled.TiledMap;
 import gameengine.utils.tiled.TiledMapLayer;
-
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
- * Handles Drawing.
+ * Handles Drawing
  *
- * Draws all objects that have required components to the screen.
+ * Draws all objects that have required components to the screen
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
 public class Renderer implements ComponentListener {

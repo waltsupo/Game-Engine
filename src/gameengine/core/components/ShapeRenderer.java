@@ -6,13 +6,13 @@ import gameengine.core.components.enums.Shapes;
 import java.awt.*;
 
 /**
- * Component that draws shape.
+ * Component that draws shape
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
-public class ShapeRenderer extends DrawComponent {
+public class ShapeRenderer extends Component {
 
     /**
      * Shape to draw
@@ -30,18 +30,23 @@ public class ShapeRenderer extends DrawComponent {
     public Color color;
 
     /**
+     * Shape's z-index
+     */
+    public int z;
+
+    /**
      * Defines values for attributes.
      *
      * @param shape Shape to draw
      * @param type Fill type
-     * @param layer Shape's layer
+     * @param z Shape's layer
      * @param color Shape's color
      */
-    public ShapeRenderer(Shapes shape, ShapeType type, int layer, Color color) {
+    public ShapeRenderer(Shapes shape, ShapeType type, int z, Color color) {
 
         this.shape = shape;
         this.type = type;
         this.color = color;
-        this.layer = layer;
+        this.z = z;
     }
 }

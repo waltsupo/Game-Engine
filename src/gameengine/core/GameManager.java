@@ -4,7 +4,7 @@ package gameengine.core;
  * Allows Game and Scene related tasks to be done anywhere
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1020
+ * @version 2016.1117
  * @since 1.7
  */
 public class GameManager {

@@ -3,12 +3,12 @@ package gameengine.core.components;
 import gameengine.core.GameObject;
 
 /**
- * Interface for classes that need information about new components.
+ * Interface for classes that need information about new components
  *
- * These methods are called when new component is created or deleted.
+ * These methods are called when new component is created
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
 public interface ComponentListener {

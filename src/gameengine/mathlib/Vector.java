@@ -1,26 +1,26 @@
 package gameengine.mathlib;
 
 /**
- * Point class.
+ * Point class
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version 2016.1002
+ * @version 2016.1117
  * @since 1.7
  */
 public class Vector {
 
     /**
-     * Point's x-coordinate.
+     * Point's x-coordinate
      */
     public float x;
 
     /**
-     * Point's y-coordinate.
+     * Point's y-coordinate
      */
     public float y;
 
     /**
-     * Defines values.
+     * Defines values
      */
     public Vector() {
 
@@ -29,7 +29,7 @@ public class Vector {
     }
 
     /**
-     * Defines values.
+     * Defines values
      *
      * @param x X-coordinate
      * @param y Y-coordinate
@@ -41,7 +41,7 @@ public class Vector {
     }
 
     /**
-     * Gets unit vector.
+     * Gets unit vector
      *
      * @return Unit vector
      */
@@ -53,7 +53,7 @@ public class Vector {
     }
 
     /**
-     * Returns length of the vector.
+     * Returns length of the vector
      *
      * @return Distance from (0,0)
      */
@@ -63,7 +63,7 @@ public class Vector {
     }
 
     /**
-     * Returns string containing position information.
+     * Returns string containing position information
      *
      * @return position
      */
