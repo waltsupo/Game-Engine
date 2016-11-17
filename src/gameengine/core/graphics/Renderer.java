@@ -200,24 +200,6 @@ public class Renderer implements ComponentListener {
     }
 
     /**
-     * Removes GameObject from the list.
-     *
-     * @param gameObject GameObject that no longer has required components
-     * @param first First class on combination list, used to separate different
-     *              combination on one listener
-     */
-    @Override
-    public void removeComponent(GameObject gameObject, Class first) {
-
-        // TODO remove component
-        /*if (first == ShapeRenderer.class) {
-            shapesToDraw.remove(gameObject);
-        } else if (first == SpriteRenderer.class) {
-            spritesToDraw.remove(gameObject);
-        }*/
-    }
-
-    /**
      * Removes GameObject from lists.
      *
      * @param gameObject gameobject to remove

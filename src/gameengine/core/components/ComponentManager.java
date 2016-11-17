@@ -115,45 +115,4 @@ public class ComponentManager {
             }
         }
     }
-
-    /**
-     * Looks if listener needs information that specific component has
-     * been removed.
-     *
-     * @param gameObject Component's parent GameObject
-     * @param component Component to remove
-     */
-    public static void removeComponent(GameObject gameObject,
-                                       Component component) {
-
-
-        // Loop every entry in combinations
-        for (Map.Entry<ComponentListener,
-                ArrayList<ArrayList<Class>>> entry : combinations.entrySet()) {
-
-            // Loop class combinations
-            for (int index = 0; index < entry.getValue().size(); index++) {
-                ArrayList<Class> classList = entry.getValue().get(index);
-
-                // If contains new component's class
-                if (classList.contains(component.getClass())) {
-
-                    boolean hasComponents = true;
-
-                    // See if GameObject has other components required
-                    for (Class compClass : classList) {
-
-                        if (gameObject.getComponent(compClass) == null) {
-                            hasComponents = false;
-                        }
-                    }
-
-                    if(hasComponents) {
-                        entry.getKey()
-                                .removeComponent(gameObject, classList.get(0));
-                    }
-                }
-            }
-        }
-    }
 }

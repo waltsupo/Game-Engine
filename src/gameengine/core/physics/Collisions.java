@@ -199,20 +199,7 @@ public class Collisions implements ComponentListener, SubSystem {
 
         collisionObjs.add(gameObject);
     }
-
-    // TODO
-    /**
-     * Removes gameobject from the list.
-     *
-     * @param gameObject Gameobject that no longer has required components
-     * @param first First class on combination list, used to separate different
-     *              combination on one listener
-     */
-    @Override
-    public void removeComponent(GameObject gameObject, Class first) {
-
-    }
-
+    
     /**
      * Removes all references to object in this class.
      *

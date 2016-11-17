@@ -14,19 +14,10 @@ import gameengine.core.GameObject;
 public interface ComponentListener {
 
     /**
-     * Handles new GameObject that has required components.
+     * Handles new GameObject that has required components
      *
      * @param gameObject GameObject that has required components
      * @param comClass Component class first on the combination list
      */
     void newGameObject(GameObject gameObject, Class comClass);
-
-    /**
-     * Handles removing GameObject that no longer has required components.
-     *
-     * @param gameObject GameObject that no longer has required components
-     * @param first First class on combination list, used to separate different
-     *              combinations on one listener
-     */
-    void removeComponent(GameObject gameObject, Class first);
 }
