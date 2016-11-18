@@ -29,6 +29,7 @@ class DrawableTiledLayer extends DrawableObject {
     /**
      * Constructor.
      *
+     * @param gameObject Parent GameObject
      * @param tiledMapRenderer TiledMapRenderer to get necessary information
      * @param layer To what layer TiledMapLayer will be drawn
      */
