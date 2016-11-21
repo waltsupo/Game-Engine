@@ -17,9 +17,9 @@ import java.awt.image.BufferedImage;
 public class Window {
 
     /**
-     * JFrame for the game.
+     * Frame for the game.
      */
-    private JFrame frame;
+    private Frame frame;
 
     /**
      * Canvas for drawing.
@@ -46,13 +46,13 @@ public class Window {
      */
     Window() {
 
-        frame = new JFrame();
+        frame = new Frame();
 
         // Prevent resizing
         frame.setResizable(false);
 
         // Close program on "close"
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        // frame.set
         // Set canvas on the middle
         frame.setLayout(new BorderLayout());
 
