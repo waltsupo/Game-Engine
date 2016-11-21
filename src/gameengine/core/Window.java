@@ -2,10 +2,13 @@ package gameengine.core;
 
 import gameengine.core.input.InputManager;
 
-import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+
+import static com.sun.deploy.uitoolkit.ToolkitStore.dispose;
 
 /**
  * Window for the game.
@@ -52,7 +55,20 @@ public class Window {
         frame.setResizable(false);
 
         // Close program on "close"
-        // frame.set
+        frame.addWindowListener(new WindowAdapter() {
+                                public void windowClosing(WindowEvent we) {
+
+                                    try {
+                                        dispose();
+                                    } catch (Exception e) {
+
+                                    }
+
+                                    GameManager.endGame();
+                                }
+                            }
+        );
+
         // Set canvas on the middle
         frame.setLayout(new BorderLayout());
 

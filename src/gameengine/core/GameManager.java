@@ -107,5 +107,6 @@ public class GameManager {
     public static void endGame() {
 
         game.endGame();
+        System.exit(1);
     }
 }
