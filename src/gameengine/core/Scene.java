@@ -59,10 +59,12 @@ public abstract class Scene {
 
     /**
      * Renders scene.
+     *
+     * @param delta Elapsed time since last update
      */
-    void render() {
+    void render(float delta) {
 
-        renderer.render();
+        renderer.render(delta);
     }
 
     /**

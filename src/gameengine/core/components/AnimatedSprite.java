@@ -36,19 +36,21 @@ public class AnimatedSprite extends Component {
      */
     public int z;
 
+    public int[][] images = {{0, 495}, {536, 495}, {536 * 2, 495}, {536 * 3, 495}, {536 * 4, 495}, {0, 0}, {536 * 1, 0}, {536 * 2, 0}, {536 * 3, 0}, {536 * 4, 0}};
+
     /**
      * Constructor for component
      *
-     * @param image Image that contains all frames
+     * @param spritesheet Image that contains all frames
      * @param width Width of one image
      * @param height Height of one image
      * @param time Time between images
      * @param z Layer
      */
     public AnimatedSprite
-            (Image image, int width, int height, float time, int z) {
+            (Image spritesheet, int width, int height, float time, int z) {
 
-        spritesheet = image;
+        this.spritesheet = spritesheet;
         this.width = width;
         this.height = height;
         this.time = time;

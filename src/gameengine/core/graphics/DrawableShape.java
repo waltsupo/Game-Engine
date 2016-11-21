@@ -38,10 +38,11 @@ class DrawableShape extends DrawableObject {
      * Draws Shape.
      *
      * @param g Graphics-object for drawing
+     * @param delta Elapsed time since last update
      * @param camera Camera for checks
      */
     @Override
-    void draw(Graphics2D g, Camera camera) {
+    void draw(Graphics2D g, float delta, Camera camera) {
 
         if (shapeRenderer.shape == Shapes.RECTANGLE) {
             Rectangle rect = new Rectangle(gameObject.transform.x,

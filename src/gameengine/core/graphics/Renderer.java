@@ -59,12 +59,16 @@ public class Renderer implements ComponentListener {
         ComponentManager.addCombination(this, SpriteRenderer.class,
                 Transform.class);
         ComponentManager.addCombination(this, TiledMapRenderer.class);
+        ComponentManager.addCombination(this, AnimatedSprite.class,
+                Transform.class);
     }
 
     /**
      * Draws to screen.
+     *
+     * @param delta Elapsed time since last update
      */
-    public void render() {
+    public void render(float delta) {
 
         // create and get graphics
 
@@ -80,7 +84,7 @@ public class Renderer implements ComponentListener {
         for (Layer layer : layers) {
             for (DrawableObject drawable : layer.drawables) {
 
-                drawable.draw(g, camera);
+                drawable.draw(g, delta, camera);
             }
         }
 
@@ -111,6 +115,9 @@ public class Renderer implements ComponentListener {
         if (comClass == SpriteRenderer.class) {
 
             addDrawable(new DrawableSprite(gameObject));
+        } else if (comClass == AnimatedSprite.class) {
+
+            addDrawable(new DrawableAnimation(gameObject));
         } else if (comClass == ShapeRenderer.class) {
 
             addDrawable(new DrawableShape(gameObject));

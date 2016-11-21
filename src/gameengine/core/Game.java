@@ -131,10 +131,10 @@ public abstract class Game {
             second += delta;
 
             update((float) delta);
-            render();
+            render((float) delta);
 
             if (second >= 1) {
-
+                System.out.println(frames);
                 second--;
                 frames = 0;
             }
@@ -168,10 +168,12 @@ public abstract class Game {
 
     /**
      * Renders game to window.
+     *
+     * @param delta Elapsed time since last update
      */
-    private void render() {
+    private void render(float delta) {
 
-        currentScene.render();
+        currentScene.render(delta);
         frames++;
     }
 

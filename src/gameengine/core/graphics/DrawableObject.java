@@ -27,7 +27,8 @@ abstract class DrawableObject {
      * Draws object.
      *
      * @param g Graphics-object for drawing
+     * @param delta Elapsed time since last update
      * @param camera Camera for checks
      */
-    abstract void draw(Graphics2D g, Camera camera);
+    abstract void draw(Graphics2D g, float delta, Camera camera);
 }

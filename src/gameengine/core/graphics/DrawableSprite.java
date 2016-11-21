@@ -35,10 +35,11 @@ class DrawableSprite extends DrawableObject {
      * Draws image.
      *
      * @param g Graphics-object for drawing
+     * @param delta Elapsed time since last update
      * @param camera Camera for checks
      */
     @Override
-    void draw(Graphics2D g, Camera camera) {
+    void draw(Graphics2D g, float delta, Camera camera) {
 
         g.drawImage(spriteRenderer.image, (int) gameObject.transform.x,
                 (int) (gameObject.transform.y + gameObject.transform.height),
