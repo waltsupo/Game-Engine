@@ -23,8 +23,6 @@ class DrawableAnimation extends DrawableObject {
 
     private float time;
 
-    private int row;
-
     /**
      * Defines values
      *
@@ -48,24 +46,33 @@ class DrawableAnimation extends DrawableObject {
     void draw(Graphics2D g, float delta, Camera camera) {
 
         time += delta;
-        while (time >= animatedSprite.time) {
-            time -= animatedSprite.time;
-            index++;
+        while (time >= animatedSprite.animation.time) {
+            time -= animatedSprite.animation.time;
 
-            if (index >= animatedSprite.images.length) {
-                index = 0;
+            if (animatedSprite.animation.loop) {
+                if (index >= animatedSprite.animation.images.length - 1) {
+                    index = 0;
+                } else {
+                    index++;
+                }
+            } else {
+                if (index < animatedSprite.animation.images.length - 1) {
+                    index++;
+                }
             }
         }
 
-        g.drawImage(animatedSprite.spritesheet,
+        g.drawImage(animatedSprite.animation.source,
                 (int) gameObject.transform.x,
                 (int) (gameObject.transform.y + gameObject.transform.height),
                 (int) (gameObject.transform.x + gameObject.transform.width),
                 (int) gameObject.transform.y,
-                animatedSprite.images[index][0],
-                animatedSprite.images[index][1],
-                animatedSprite.images[index][0] + animatedSprite.width,
-                animatedSprite.images[index][1] + animatedSprite.height,
+                animatedSprite.animation.images[index][0],
+                animatedSprite.animation.images[index][1],
+                animatedSprite.animation.images[index][0]
+                        + animatedSprite.animation.width,
+                animatedSprite.animation.images[index][1]
+                        + animatedSprite.animation.height,
                 null);
     }
 }
