@@ -17,6 +17,10 @@ public class Animation {
     public int height;
     public boolean loop;
     public float time;
+    public int index;
+    public boolean isFinished;
+    private boolean originalX;
+    private boolean originalY;
 
     private Animation(Image src, int[][] coords, int width, int height, float time, boolean loop) {
 
@@ -26,6 +30,40 @@ public class Animation {
         this.height = height;
         this.time = time;
         this.loop = loop;
+        index = 0;
+        isFinished = false;
+        originalX = true;
+        originalY = true;
+    }
+
+    public void play() {
+
+        index = 0;
+        isFinished = false;
+    }
+
+    public void flipX(boolean originalDir) {
+
+        if (!(originalX == originalDir)) {
+            originalX = originalDir;
+
+            for (int index = 0; index < images.length; index++) {
+                images[index][0] += width;
+            }
+            width = -width;
+        }
+    }
+
+    public void flipY(boolean originalDir) {
+
+        if (!(originalY == originalDir)) {
+            originalY = originalDir;
+        }
+
+        for (int index = 0; index < images.length; index++) {
+            images[index][1] += height;
+        }
+        height = -height;
     }
 
     public static Animation createAnimation(Image src, int startX, int startY, int width, int height, int images, float time, boolean loop) {
