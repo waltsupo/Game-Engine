@@ -65,8 +65,8 @@ class DrawableAnimation extends DrawableObject {
 
         g.drawImage(animatedSprite.animation.source,
                 (int) gameObject.transform.x,
-                (int) (gameObject.transform.y + gameObject.transform.height),
-                (int) (gameObject.transform.x + gameObject.transform.width),
+                (int) (gameObject.transform.y + animatedSprite.animation.height),
+                (int) (gameObject.transform.x + animatedSprite.animation.width),
                 (int) gameObject.transform.y,
                 animatedSprite.animation.images
                         [animatedSprite.animation.index][0],
@@ -74,10 +74,10 @@ class DrawableAnimation extends DrawableObject {
                         [animatedSprite.animation.index][1],
                 animatedSprite.animation.images
                         [animatedSprite.animation.index][0]
-                        + animatedSprite.animation.width,
+                        + animatedSprite.animation.imageWidth,
                 animatedSprite.animation.images
                         [animatedSprite.animation.index][1]
-                        + animatedSprite.animation.height,
+                        + animatedSprite.animation.imageHeight,
                 null);
     }
 }

@@ -15,6 +15,8 @@ public class Animation {
     public Image source;
     public int width;
     public int height;
+    public int imageWidth;
+    public int imageHeight;
     public boolean loop;
     public float time;
     public int index;
@@ -22,14 +24,16 @@ public class Animation {
     private boolean originalX;
     private boolean originalY;
 
-    private Animation(Image src, int[][] coords, int width, int height, float time, boolean loop) {
+    private Animation(Image src, int[][] coords, int width, int height, int imageWidth, int imageHeight, float time, boolean loop) {
 
         source = src;
         this.images = coords;
-        this.width = width;
-        this.height = height;
+        this.imageWidth = imageWidth;
+        this.imageHeight = imageHeight;
         this.time = time;
         this.loop = loop;
+        this.width = width;
+        this.height = height;
         index = 0;
         isFinished = false;
         originalX = true;
@@ -48,9 +52,9 @@ public class Animation {
             originalX = originalDir;
 
             for (int index = 0; index < images.length; index++) {
-                images[index][0] += width;
+                images[index][0] += imageWidth;
             }
-            width = -width;
+            imageWidth = -imageWidth;
         }
     }
 
@@ -61,12 +65,12 @@ public class Animation {
         }
 
         for (int index = 0; index < images.length; index++) {
-            images[index][1] += height;
+            images[index][1] += imageHeight;
         }
-        height = -height;
+        imageHeight = -imageHeight;
     }
 
-    public static Animation createAnimation(Image src, int startX, int startY, int width, int height, int images, float time, boolean loop) {
+    public static Animation createAnimation(Image src, int width, int height, int startX, int startY, int imageWidth, int imageHeight, int images, float time, boolean loop) {
 
         int[][] coords = new int[images][2];
         int x = startX;
@@ -75,21 +79,16 @@ public class Animation {
 
         for (int index = 0; index < coords.length; index++) {
 
-            if (x + width > src.getWidth(null)) {
-                y += height;
+            if (x + imageWidth > src.getWidth(null)) {
+                y += imageHeight;
                 x = 0;
             }
 
             coords[index][0] = x;
             coords[index][1] = y;
-            x += width;
+            x += imageWidth;
         }
 
-        for (int index = 0; index < coords.length; index++) {
-
-                System.out.println(coords[index][0] + " " + coords[index][1]);
-        }
-
-        return new Animation(src, coords, width, height, time, loop);
+        return new Animation(src, coords, width, height, imageWidth, imageHeight, time, loop);
     }
 }
