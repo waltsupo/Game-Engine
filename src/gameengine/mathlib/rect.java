@@ -150,8 +150,16 @@ public class rect extends Rectangle2D {
         return rect;
     }
 
+    /**
+     * Creates union from rectangles(NOT SUPPORTED YET)
+     *
+     * @param r Other rectangle
+     * @return Union from rectangles
+     */
     @Override
     public Rectangle2D createUnion(Rectangle2D r) {
+
+
         return null;
     }
 
@@ -199,8 +207,18 @@ public class rect extends Rectangle2D {
         return height;
     }
 
+    /**
+     * Tells if rectangle encloses no area
+     *
+     * @return True if width/height is 0
+     */
     @Override
     public boolean isEmpty() {
+
+        if (width == 0 || height == 0) {
+
+            return true;
+        }
 
         return false;
     }
