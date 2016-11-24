@@ -3,18 +3,44 @@ package gameengine.mathlib;
 import java.awt.geom.Rectangle2D;
 
 /**
- * TODO description
+ * Rectangle object for the game.
+ *
+ * Used for example in collision detection.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
- * @version %I%, %G%
+ * @version 2016.1124
+ * @since 1.7
  */
 public class rect extends Rectangle2D {
 
+    /**
+     * X-coordinate of bottom-left corner.
+     */
     public double x;
+
+    /**
+     * Y-coordinate of bottom-left corner.
+     */
     public double y;
+
+    /**
+     * Width of the rectangle.
+     */
     public double width;
+
+    /**
+     * Height of the rectangle.
+     */
     public double height;
 
+    /**
+     * Defines new values for the rectangle.
+     *
+     * @param x New X-coordinate
+     * @param y New Y-coordinate
+     * @param w New width
+     * @param h New height
+     */
     @Override
     public void setRect(double x, double y, double w, double h) {
 
@@ -24,6 +50,21 @@ public class rect extends Rectangle2D {
         this.height = h;
     }
 
+    /**
+     * Tells where given point is located related to rectangle.
+     *
+     * Returns sum of directions, 0 if inside.
+     *  - Left: 1
+     *  - Right: 2
+     *  - Bottom: 3
+     *  - Top: 4
+     *
+     * For example, if point is bottom-left from rectangle, returns 4.
+     *
+     * @param x Point's X-coordinate
+     * @param y Point's Y-coordinate
+     * @return Sum of directions
+     */
     @Override
     public int outcode(double x, double y) {
 
