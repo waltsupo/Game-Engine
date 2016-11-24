@@ -17,6 +17,8 @@ public class Animation {
     public int height;
     public int imageWidth;
     public int imageHeight;
+    public int offsetX;
+    public int offsetY;
     public boolean loop;
     public float time;
     public int index;
@@ -31,6 +33,8 @@ public class Animation {
         this.imageWidth = imageWidth;
         this.imageHeight = imageHeight;
         this.time = time;
+        offsetX = 0;
+        offsetY = 0;
         this.loop = loop;
         this.width = width;
         this.height = height;
