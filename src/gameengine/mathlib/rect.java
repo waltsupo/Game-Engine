@@ -88,7 +88,7 @@ public class rect extends Rectangle2D {
 
 
     /**
-     * Creates rectangle from intersection of 2 rectangles
+     * Creates rectangle from intersection of 2 rectangles.
      *
      * @param r Other rectangle
      * @return Intersection rectangle, null if no intersection
@@ -155,22 +155,44 @@ public class rect extends Rectangle2D {
         return null;
     }
 
+    /**
+     * Gets X-coordinate
+     *
+     * @return Bottom-left corner X-coordinate
+     */
     @Override
     public double getX() {
+
         return x;
     }
 
+    /**
+     * Gets Y-coordinate
+     *
+     * @return Bottom-left corner Y-coordinate
+     */
     @Override
     public double getY() {
+
         return y;
     }
 
+    /**
+     * Gets width of the rectangle.
+     *
+     * @return width
+     */
     @Override
     public double getWidth() {
 
         return width;
     }
 
+    /**
+     * Gets height of the rectangle.
+     *
+     * @return height
+     */
     @Override
     public double getHeight() {
 
