@@ -19,8 +19,6 @@ class DrawableAnimation extends DrawableObject {
      */
     private AnimatedSprite animatedSprite;
 
-    private int index;
-
     private float time;
 
     /**
@@ -33,7 +31,6 @@ class DrawableAnimation extends DrawableObject {
         this.gameObject = gameObject;
         animatedSprite = gameObject.getComponent(AnimatedSprite.class);
         z = animatedSprite.z;
-        index = 0;
     }
 
     /**
@@ -49,30 +46,38 @@ class DrawableAnimation extends DrawableObject {
         while (time >= animatedSprite.animation.time) {
             time -= animatedSprite.animation.time;
 
-            if (animatedSprite.animation.loop) {
-                if (index >= animatedSprite.animation.images.length - 1) {
-                    index = 0;
+            if (!animatedSprite.animation.isFinished) {
+                if (animatedSprite.animation.loop) {
+                    if (animatedSprite.animation.index >= animatedSprite.animation.images.length - 1) {
+                        animatedSprite.animation.index = 0;
+                    } else {
+                        animatedSprite.animation.index++;
+                    }
                 } else {
-                    index++;
-                }
-            } else {
-                if (index < animatedSprite.animation.images.length - 1) {
-                    index++;
+                    if (animatedSprite.animation.index < animatedSprite.animation.images.length - 1) {
+                        animatedSprite.animation.index++;
+                    } else {
+                        animatedSprite.animation.isFinished = true;
+                    }
                 }
             }
         }
 
         g.drawImage(animatedSprite.animation.source,
-                (int) gameObject.transform.x,
-                (int) (gameObject.transform.y + gameObject.transform.height),
-                (int) (gameObject.transform.x + gameObject.transform.width),
+                (int) gameObject.transform.x + animatedSprite.animation.offsetX,
+                (int) (gameObject.transform.y + animatedSprite.animation.height),
+                (int) (gameObject.transform.x + animatedSprite.animation.offsetX + animatedSprite.animation.width),
                 (int) gameObject.transform.y,
-                animatedSprite.animation.images[index][0],
-                animatedSprite.animation.images[index][1],
-                animatedSprite.animation.images[index][0]
-                        + animatedSprite.animation.width,
-                animatedSprite.animation.images[index][1]
-                        + animatedSprite.animation.height,
+                animatedSprite.animation.images
+                        [animatedSprite.animation.index][0],
+                animatedSprite.animation.images
+                        [animatedSprite.animation.index][1],
+                animatedSprite.animation.images
+                        [animatedSprite.animation.index][0]
+                        + animatedSprite.animation.imageWidth,
+                animatedSprite.animation.images
+                        [animatedSprite.animation.index][1]
+                        + animatedSprite.animation.imageHeight,
                 null);
     }
 }
