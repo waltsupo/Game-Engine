@@ -86,9 +86,68 @@ public class rect extends Rectangle2D {
         return out;
     }
 
+
+    /**
+     * Creates rectangle from intersection of 2 rectangles
+     *
+     * @param r Other rectangle
+     * @return Intersection rectangle, null if no intersection
+     */
     @Override
     public Rectangle2D createIntersection(Rectangle2D r) {
-        return null;
+
+        rect rect = new rect();
+        
+        if (r.getX() <= x && r.getX() + r.getWidth() > x) {
+            
+            rect.x = x;
+            
+            if (r.getX() + r.getWidth() - x < width) {
+                rect.width = r.getX() + r.getWidth() - x;
+            } else {
+                rect.width = width;
+            }
+        } else if (r.getX() > x && x + width < r.getX()) {
+            
+            rect.x = r.getX();
+
+            if (x + width - r.getX() < r.getWidth()) {
+                rect.width = x + width - r.getX();
+            } else {
+                rect.width = r.getWidth();
+            }
+        } else {
+            
+            // No intersection
+            return null;
+        }
+
+        if (r.getY() <= y && r.getY() + r.getHeight() > y) {
+
+            rect.y = y;
+
+            if (r.getY() + r.getHeight() - y < height) {
+                rect.height = r.getY() + r.getHeight() - y;
+            } else {
+                rect.height = height;
+            }
+        } else if (r.getY() > y && y + height < r.getY()) {
+
+            rect.y = r.getY();
+
+            if (y + height - r.getY() < r.getHeight()) {
+                rect.height = y + height - r.getY();
+            } else {
+                rect.height = r.getHeight();
+            }
+        } else {
+
+            // No intersection
+            return null;
+        }
+
+        // If both x and y values defined for rectangle
+        return rect;
     }
 
     @Override
