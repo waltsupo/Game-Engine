@@ -10,6 +10,16 @@ package gameengine.mathlib;
 public abstract class Shape {
 
     /**
+     * Code that tells renderer to draw only borders.
+     */
+    public static byte BORDERS = 4;
+
+    /**
+     * COde that tells renderer to draw whole shape.
+     */
+    public static byte FILL = 8;
+
+    /**
      * X-coordinate.
      */
     public float x;
