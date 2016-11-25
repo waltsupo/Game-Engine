@@ -1,7 +1,5 @@
 package gameengine.core.components;
 
-import gameengine.core.components.enums.ShapeType;
-
 import java.awt.*;
 
 /**
@@ -16,7 +14,7 @@ public class ShapeRenderer extends Component {
     /**
      * Should shape be filled or just borders.
      */
-    public ShapeType type;
+    public int fillType;
 
     /**
      * Shape's color.
@@ -31,13 +29,13 @@ public class ShapeRenderer extends Component {
     /**
      * Defines values for attributes.
      *
-     * @param type Fill type
+     * @param fillType how should shape be drawn
      * @param z Shape's layer
      * @param color Shape's color
      */
-    public ShapeRenderer(ShapeType type, int z, Color color) {
+    public ShapeRenderer(int z, Color color, int fillType) {
 
-        this.type = type;
+        this.fillType = fillType;
         this.color = color;
         this.z = z;
     }
