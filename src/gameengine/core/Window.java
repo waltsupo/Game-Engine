@@ -137,7 +137,8 @@ public class Window {
 
         // Flip graphics so that origo will be at the bottom-left corner
         g.translate(0, GameManager.getHeight());
-        g.scale(1, -1);
+        g.scale(GameManager.getWidth() / camera.transform.width,
+                -(GameManager.getHeight() /camera.transform.height));
 
         return g;
     }
