@@ -51,6 +51,7 @@ public class Renderer implements ComponentListener {
         window = GameManager.getGame().getWindow();
         layers = new ArrayList<>();
         camera = new Camera();
+        window.setCamera(camera);
         background = Color.BLACK;
 
         // Listen component changes
