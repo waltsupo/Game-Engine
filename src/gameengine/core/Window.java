@@ -152,4 +152,17 @@ public class Window {
         // show buffered image
         bStrat.show();
     }
+
+    /**
+     * Sets current camera if given camera is not null
+     *
+     * @param camera New camera
+     */
+    public void setCamera(Camera camera) {
+
+        if (camera != null) {
+
+            this.camera = camera;
+        }
+    }
 }
