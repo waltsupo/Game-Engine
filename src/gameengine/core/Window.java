@@ -1,5 +1,6 @@
 package gameengine.core;
 
+import gameengine.core.graphics.Camera;
 import gameengine.core.input.InputManager;
 
 import java.awt.*;
@@ -43,6 +44,11 @@ public class Window {
      * BufferStrategy for drawing.
      */
     private BufferStrategy bStrat;
+
+    /**
+     * Camera used in drawing
+     */
+    private Camera camera;
 
     /**
      * Creates window.
@@ -142,7 +148,7 @@ public class Window {
     public void stop() {
 
         // draw image to the buffer
-        g.drawImage(image, 0, 0, canvas.getWidth(), canvas.getHeight(),null);
+        //g.drawImage(image, 0, 0, canvas.getWidth(), canvas.getHeight(),null);
         // show buffered image
         bStrat.show();
     }
