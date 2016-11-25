@@ -1,5 +1,7 @@
 package gameengine.core.components;
 
+import gameengine.mathlib.ShapeFill;
+
 import java.awt.*;
 
 /**
@@ -14,7 +16,7 @@ public class ShapeRenderer extends Component {
     /**
      * Should shape be filled or just borders.
      */
-    public int fillType;
+    public ShapeFill fillType;
 
     /**
      * Shape's color.
@@ -33,7 +35,7 @@ public class ShapeRenderer extends Component {
      * @param z Shape's layer
      * @param color Shape's color
      */
-    public ShapeRenderer(int z, Color color, int fillType) {
+    public ShapeRenderer(int z, Color color, ShapeFill fillType) {
 
         this.fillType = fillType;
         this.color = color;

@@ -4,6 +4,7 @@ import gameengine.core.GameObject;
 import gameengine.core.components.ShapeRenderer;
 import gameengine.mathlib.Rectangle;
 import gameengine.mathlib.Shape;
+import gameengine.mathlib.ShapeFill;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -59,14 +60,14 @@ class DrawableShape extends DrawableObject {
      * @param type Fill type
      */
     private void drawRectangle(Graphics2D g, Rectangle rectangle,
-                               Color color, int type) {
+                               Color color, ShapeFill type) {
 
         g.setColor(color);
 
-        if (type == Shape.FILL) {
+        if (type == ShapeFill.FILL) {
             g.fillRect((int) rectangle.x, (int)rectangle.y,
                     (int)rectangle.width, (int)rectangle.height);
-        } else if (type == Shape.BORDERS) {
+        } else if (type == ShapeFill.BORDERS) {
             g.drawRect((int)rectangle.x, (int)rectangle.y,
                     (int)rectangle.width, (int)rectangle.height);
         }

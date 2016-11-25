@@ -1,5 +1,7 @@
 package gameengine.mathlib;
 
+import java.awt.geom.Rectangle2D;
+
 /**
  * Rectangle class for collisions and drawing.
  *
@@ -7,7 +9,17 @@ package gameengine.mathlib;
  * @version 2016.1117
  * @since 1.7
  */
-public class Rectangle extends Shape{
+public class Rectangle extends Rectangle2D.Float implements Shape {
+
+    /**
+     * X-coordinate of bottom-left corner.
+     */
+    public float x;
+
+    /**
+     * Y-coordinate of bottom-left corner.
+     */
+    public float y;
 
     /**
      * Width.
@@ -66,16 +78,17 @@ public class Rectangle extends Shape{
     }
 
     /**
-     * Looks if rectangle collides with given shape.
+     * Looks if this collides to given shape.
      *
      * @param shape Other shape
-     * @return true if collides
+     * @return True if collides
      */
+    @Override
     public boolean collides(Shape shape) {
 
         boolean collides = false;
 
-        if (shape.getClass() == Rectangle.class) {
+        if (shape instanceof Rectangle) {
             collides = collides((Rectangle) shape);
         }
 
@@ -103,5 +116,31 @@ public class Rectangle extends Shape{
         }
 
         return collision;
+    }
+
+    /**
+     * Changes position to given coordinates.
+     *
+     * @param x New X-coordinate
+     * @param y New Y-coordinate
+     */
+    @Override
+    public void moveTo(float x, float y) {
+
+        this.x = x;
+        this.y = y;
+    }
+
+    /**
+     * Moves position by given amount.
+     *
+     * @param x Change on X-axis
+     * @param y Change on Y-axis
+     */
+    @Override
+    public void translate(float x, float y) {
+
+        this.x += x;
+        this.y += y;
     }
 }
