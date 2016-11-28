@@ -6,7 +6,7 @@ import gameengine.core.components.AnimatedSprite;
 import java.awt.*;
 
 /**
- * Object to draw animation
+ * Object to draw animation.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.fi
  * @version 2016.1120
@@ -15,14 +15,17 @@ import java.awt.*;
 class DrawableAnimation extends DrawableObject {
 
     /**
-     * Animation component
+     * Animation component.
      */
     private AnimatedSprite animatedSprite;
 
+    /**
+     * Time between frames.
+     */
     private float time;
 
     /**
-     * Defines values
+     * Defines values.
      *
      * @param gameObject Parent GameObject
      */
@@ -34,7 +37,7 @@ class DrawableAnimation extends DrawableObject {
     }
 
     /**
-     * Draws animation
+     * Draws animation.
      *
      * @param g Graphics-object for drawing
      * @param delta Elapsed time since last update
