@@ -20,7 +20,7 @@ class DrawableAnimation extends DrawableObject {
     private AnimatedSprite animatedSprite;
 
     /**
-     * Time between frames.
+     * Counter to change image at the right time.
      */
     private float time;
 
