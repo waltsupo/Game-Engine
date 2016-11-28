@@ -2,10 +2,8 @@ package gameengine.core.components;
 
 import gameengine.core.graphics.Animation;
 
-import java.awt.*;
-
 /**
- * Component for animated components
+ * Component for animated components.
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.fi
  * @version 2016.1120
@@ -14,14 +12,17 @@ import java.awt.*;
 public class AnimatedSprite extends Component {
 
     /**
-     * Layer to draw
+     * Layer to draw.
      */
     public int z;
 
+    /**
+     * Animation to play.
+     */
     public Animation animation;
 
     /**
-     * Constructor for component
+     * Constructor for component.
      *
      * @param animation Animation to play
      * @param z Layer
