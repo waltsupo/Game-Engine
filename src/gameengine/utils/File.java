@@ -23,4 +23,18 @@ public class File {
 
         pairs = new HashMap<>();
     }
+
+    /**
+     * Gets value of given key as string.
+     *
+     * It's preferred to use this instead of getValue when value contains only
+     * one String.
+     *
+     * @param key Key to get value from
+     * @return Value as a String
+     */
+    public String getString(String key) {
+
+        return null;
+    }
 }
