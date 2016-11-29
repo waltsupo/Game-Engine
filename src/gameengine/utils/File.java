@@ -1,5 +1,7 @@
 package gameengine.utils;
 
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 import java.util.HashMap;
 
 /**
@@ -19,7 +21,7 @@ public class File {
     /**
      * Path to current file.
      */
-    private String src;
+    private Path path;
 
     /**
      * Default constructor
@@ -27,7 +29,7 @@ public class File {
     public File() {
 
         pairs = new HashMap<>();
-        src = "";
+        path = null;
     }
 
     /**
@@ -102,7 +104,7 @@ public class File {
     public void load(String url) {
 
         if (url != null && !url.equals("")) {
-            src = url;
+            path = FileSystems.getDefault().getPath(url);
             load();
         }
     }
@@ -122,7 +124,7 @@ public class File {
     public void save(String url) {
 
         if (url != null && !url.equals("")) {
-            src = url;
+            path = FileSystems.getDefault().getPath(url);
             save();
         }
     }
