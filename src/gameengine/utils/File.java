@@ -17,11 +17,17 @@ public class File {
     private HashMap<String, String> pairs;
 
     /**
+     * Path to current file.
+     */
+    private String src;
+
+    /**
      * Default constructor
      */
     public File() {
 
         pairs = new HashMap<>();
+        src = "";
     }
 
     /**
