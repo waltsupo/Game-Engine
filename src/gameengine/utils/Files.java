@@ -18,7 +18,7 @@ public class Files {
     /**
      * Starting folder.
      */
-    public static String defaultPath = "src/assets";
+    public static String defaultPath = "src/assets/";
 
     /**
      * Creates compatible image from the source.
