@@ -31,46 +31,14 @@ public class File {
     }
 
     /**
-     * Gets value of given key as string.
+     * Gets value of given.
      *
      * @param key Key to get value from
-     * @return Value as a String
+     * @return Value of the key
      */
-    public String getString(String key) {
+    public String get(String key) {
 
         return null;
-    }
-
-    /**
-     * Loads current file again.
-     */
-    public void load() {
-
-    }
-
-    /**
-     * Loads file located at given path.
-     *
-     * @param url Path to file
-     */
-    public void load(String url) {
-
-    }
-
-    /**
-     * Writes to current file.
-     */
-    public void save() {
-
-    }
-
-    /**
-     * Writes to file located at given path.
-     *
-     * @param url Path to file
-     */
-    public void save(String url) {
-
     }
 
     /**
@@ -118,4 +86,37 @@ public class File {
 
         pairs.remove(key);
     }
+
+    /**
+     * Loads current file again.
+     */
+    public void load() {
+
+    }
+
+    /**
+     * Loads file located at given path.
+     *
+     * @param url Path to file
+     */
+    public void load(String url) {
+
+    }
+
+    /**
+     * Writes to current file.
+     */
+    public void save() {
+
+    }
+
+    /**
+     * Writes to file located at given path.
+     *
+     * @param url Path to file
+     */
+    public void save(String url) {
+
+    }
+
 }
