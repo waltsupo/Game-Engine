@@ -56,4 +56,20 @@ public class File {
     public void load(String url) {
 
     }
+
+    /**
+     * Writes to current file.
+     */
+    public void save() {
+
+    }
+
+    /**
+     * Writes to file located at given path.
+     *
+     * @param url Path to file
+     */
+    public void save(String url) {
+
+    }
 }
