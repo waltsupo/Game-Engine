@@ -1,8 +1,9 @@
 package gameengine.utils;
 
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
+import java.io.IOException;
+import java.nio.file.*;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Contains data, can be saved to or loaded from external file.
@@ -40,7 +41,7 @@ public class File {
      */
     public String get(String key) {
 
-        return null;
+        return pairs.get(key);
     }
 
     /**
@@ -112,8 +113,20 @@ public class File {
     /**
      * Writes to current file.
      */
-    public void save() {
+    public void save() throws IOException {
 
+        String toSave = "";
+
+        for (Map.Entry<String, String> entry : pairs.entrySet()) {
+
+            toSave += entry.getKey();
+            toSave += " : ";
+            toSave += entry.getValue();
+            toSave += "\n";
+        }
+
+        java.nio.file.Files.write(path, toSave.getBytes(),
+                StandardOpenOption.CREATE);
     }
 
     /**
@@ -121,7 +134,7 @@ public class File {
      *
      * @param url Path to file
      */
-    public void save(String url) {
+    public void save(String url) throws IOException {
 
         if (url != null && !url.equals("")) {
             path = FileSystems.getDefault().getPath(url);
