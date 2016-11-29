@@ -72,4 +72,37 @@ public class File {
     public void save(String url) {
 
     }
+
+    /**
+     * Adds new key-value pair.
+     *
+     * If key exists, nothing happens.
+     *
+     * @param key New key
+     * @param value New Value
+     */
+    public void add(String key, String value) {
+
+    }
+
+    /**
+     * Modifies given key.
+     *
+     * If key doesn't exist, new key will be created.
+     *
+     * @param key Key to modify
+     * @param value New value
+     */
+    public void modify(String key, String value) {
+
+    }
+
+    /**
+     * Removes given key.
+     *
+     * @param key Key to remove
+     */
+    public void remove(String key) {
+
+    }
 }
