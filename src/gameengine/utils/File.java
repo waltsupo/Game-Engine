@@ -83,6 +83,11 @@ public class File {
      */
     public void add(String key, String value) {
 
+        if (!pairs.containsKey(key)
+                && value != null && !value.equals("")) {
+
+            pairs.put(key, value);
+        }
     }
 
     /**
@@ -95,6 +100,13 @@ public class File {
      */
     public void modify(String key, String value) {
 
+        if (value != null && !value.equals("")) {
+            if (pairs.containsKey(key)) {
+                pairs.replace(key, value);
+            } else {
+                pairs.put(key, value);
+            }
+        }
     }
 
     /**
@@ -104,5 +116,6 @@ public class File {
      */
     public void remove(String key) {
 
+        pairs.remove(key);
     }
 }
