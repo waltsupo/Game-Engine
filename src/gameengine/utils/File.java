@@ -40,4 +40,20 @@ public class File {
 
         return null;
     }
+
+    /**
+     * Loads current file again.
+     */
+    public void load() {
+
+    }
+
+    /**
+     * Loads file located at given path.
+     *
+     * @param url Path to file
+     */
+    public void load(String url) {
+
+    }
 }
