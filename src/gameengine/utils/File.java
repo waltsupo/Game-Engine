@@ -88,7 +88,7 @@ public class File {
     }
 
     /**
-     * Loads current file again.
+     * Loads current file.
      */
     public void load() {
 
@@ -121,5 +121,9 @@ public class File {
      */
     public void save(String url) {
 
+        if (url != null && !url.equals("")) {
+            src = url;
+            save();
+        }
     }
 }
