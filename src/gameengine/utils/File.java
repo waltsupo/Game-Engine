@@ -92,6 +92,7 @@ public class File {
      */
     public void load() {
 
+        loadFile();
     }
 
     /**
@@ -101,6 +102,10 @@ public class File {
      */
     public void load(String url) {
 
+        if (url != null && !url.equals("")) {
+            src = url;
+            loadFile();
+        }
     }
 
     /**
@@ -119,4 +124,17 @@ public class File {
 
     }
 
+    /**
+     * Loads file.
+     */
+    private void loadFile() {
+
+    }
+
+    /**
+     * Writes to file.
+     */
+    private void saveFile() {
+        
+    }
 }
