@@ -8,4 +8,11 @@ package gameengine.utils;
  * @since 1.7
  */
 public class File {
+
+    /**
+     * Default constructor
+     */
+    public File() {
+
+    }
 }
