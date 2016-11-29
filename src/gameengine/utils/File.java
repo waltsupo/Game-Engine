@@ -1,5 +1,7 @@
 package gameengine.utils;
 
+import java.util.HashMap;
+
 /**
  * Contains data, can be saved to or loaded from external file.
  *
@@ -10,9 +12,15 @@ package gameengine.utils;
 public class File {
 
     /**
+     * HashMap that contains all key-value pairs from the file.
+     */
+    private HashMap<String, String> pairs;
+
+    /**
      * Default constructor
      */
     public File() {
 
+        pairs = new HashMap<>();
     }
 }
