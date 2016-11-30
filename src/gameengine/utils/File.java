@@ -160,9 +160,7 @@ public class File {
         }
 
         java.nio.file.Files.write(path, toSave.getBytes(),
-                StandardOpenOption.CREATE);
-
-        System.out.println(toSave);
+                StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
     }
 
     /**
