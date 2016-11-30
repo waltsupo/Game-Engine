@@ -1,8 +1,10 @@
 package gameengine.utils;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -93,8 +95,40 @@ public class File {
     /**
      * Loads current file.
      */
-    public void load() {
+    public void load() throws IOException {
 
+        pairs.clear();
+
+        List<String> lines = java.nio.file.Files.readAllLines(
+                path, Charset.defaultCharset());
+
+        for (String line : lines) {
+
+            String key = null;
+            String value = null;
+            String string = "";
+            boolean asKey = true;
+
+            for (int charI = 0; charI < line.length(); charI++) {
+
+                if (charI == line.length() - 1) {
+                    string += line.charAt(charI);
+                    value = string;
+                    string = "";
+                } else if (line.charAt(charI) == ':') {
+                    asKey = false;
+                    key = string;
+                    string = "";
+                } else {
+                    string += line.charAt(charI);
+                }
+            }
+
+            if (key != null && value != null) {
+
+                pairs.put(key, value);
+            }
+        }
     }
 
     /**
@@ -102,7 +136,7 @@ public class File {
      *
      * @param url Path to file
      */
-    public void load(String url) {
+    public void load(String url) throws IOException {
 
         if (url != null && !url.equals("")) {
             path = FileSystems.getDefault().getPath(url);
@@ -120,13 +154,15 @@ public class File {
         for (Map.Entry<String, String> entry : pairs.entrySet()) {
 
             toSave += entry.getKey();
-            toSave += " : ";
+            toSave += ":";
             toSave += entry.getValue();
             toSave += "\n";
         }
 
         java.nio.file.Files.write(path, toSave.getBytes(),
                 StandardOpenOption.CREATE);
+
+        System.out.println(toSave);
     }
 
     /**
