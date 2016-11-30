@@ -59,12 +59,7 @@ public class GameObject {
      */
     public void moveTo(float x, float y) {
 
-        transform.x = x;
-        transform.y = y;
-
-        for (GameObject gameObject : childs) {
-            gameObject.moveTo(x, y);
-        }
+        translate(x - transform.x, y - transform.y);
     }
 
     /**
