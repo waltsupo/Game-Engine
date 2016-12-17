@@ -92,6 +92,16 @@ public class GameManager {
     }
 
     /**
+     * Changes Game's Scene.
+     * 
+     * @param newScene New Scene to update
+     */
+    public static void setScene(Scene newScene) {
+
+        game.setScene(newScene);
+    }
+
+    /**
      * Removes references to given GameObject from Scene.
      *
      * @param gameObject GameObject to remove
