@@ -25,14 +25,20 @@ public class Timer {
     private Job job;
 
     /**
+     * Should Timer loop or not.
+     */
+    public boolean loop;
+
+    /**
      * Sets values for Timer.
      *
      * @param delay How long until given Job should be run
      * @param job Method to run after delay
      */
-    public Timer(float delay, Job job) {
+    public Timer(float delay, boolean loop, Job job) {
 
         this.delay = delay;
+        this.loop = loop;
         this.job = job;
     }
 
