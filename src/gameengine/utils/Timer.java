@@ -9,4 +9,25 @@ package gameengine.utils;
  */
 public class Timer {
 
+    /**
+     * How long to wait until running Job.
+     */
+    private float delay;
+
+    /**
+     * Method to run after delay.
+     */
+    private Job job;
+
+    /**
+     * Sets values for Timer.
+     *
+     * @param delay How long until given Job should be run
+     * @param job Method to run after delay
+     */
+    public Timer(float delay, Job job) {
+
+        this.delay = delay;
+        this.job = job;
+    }
 }
