@@ -48,15 +48,23 @@ public class Timer {
      * Adds passed time to Timer and if enough time has passed,
      * runs given method.
      *
-     * @param delta Time passed.
+     * @param delta Time passed
+     * @return If Timer is done
      */
-    public void addTime(float delta) {
+    public boolean addTime(float delta) {
 
+        boolean done = false;
         time += delta;
 
         if (time >= delay) {
             job.job();
             time -= delay;
+            
+            if (!loop) {
+                done = true;
+            }
         }
+
+        return done;
     }
 }
