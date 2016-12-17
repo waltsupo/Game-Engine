@@ -59,7 +59,7 @@ public class Timer {
         if (time >= delay) {
             job.job();
             time -= delay;
-            
+
             if (!loop) {
                 done = true;
             }
