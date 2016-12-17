@@ -2,6 +2,7 @@ package gameengine.core;
 
 import gameengine.core.physics.Physics;
 import gameengine.utils.Config;
+import gameengine.utils.Timers;
 
 /**
  * Main system to run the game.
@@ -87,6 +88,7 @@ public abstract class Game {
         GameManager.setGame(this);
         GameManager.setWidth(config.width);
         GameManager.setHeight(config.height);
+        Timers.setup();
 
         window = new Window();
         frameCap = 60;
@@ -164,6 +166,7 @@ public abstract class Game {
     private void update(float delta) {
 
         currentScene.updateScene(delta);
+        Timers.updateTimers(delta);
     }
 
     /**

@@ -40,6 +40,8 @@ public class Timer {
         this.delay = delay;
         this.loop = loop;
         this.job = job;
+
+        Timers.addTimer(this);
     }
 
     /**
