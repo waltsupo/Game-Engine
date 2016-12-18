@@ -89,4 +89,25 @@ public class TiledMap {
         rows = 0;
         columns = 0;
     }
+
+    public TileSet getTilesetWithTileIndex(int index) {
+
+        TileSet toReturn = null;
+
+        for (TileSet tileSet : tileSets) {
+
+            if (tileSet.startIndex <= index
+                    && index < tileSet.startIndex + tileSet.tileCount) {
+
+                toReturn = tileSet;
+                break;
+            }
+        }
+
+        if (toReturn == null) {
+            toReturn = tileSets.get(0);
+        }
+
+        return toReturn;
+    }
 }

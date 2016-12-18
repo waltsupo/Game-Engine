@@ -144,7 +144,7 @@ public class Maps {
         set.columns = Integer.parseInt(node.getAttributes().
                 getNamedItem("columns").getNodeValue());
         set.startIndex = Integer.parseInt(node.getAttributes().
-                getNamedItem("firstgid").getNodeValue());
+                getNamedItem("firstgid").getNodeValue()) - 1;
 
         map.tileSets.add(set);
     }
