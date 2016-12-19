@@ -69,8 +69,8 @@ public class Rectangle extends Rectangle2D.Float implements Shape {
 
         Boolean contains = false;
 
-        if ((this.x <= x && this.x + width >= x)
-                && this.y <= y && this.y + height >= y) {
+        if ((this.x < x && this.x + width > x)
+                && this.y < y && this.y + height > y) {
             contains = true;
         }
 
