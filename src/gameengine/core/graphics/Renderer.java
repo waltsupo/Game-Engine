@@ -31,7 +31,7 @@ public class Renderer implements ComponentListener {
     /**
      * Camera for view.
      */
-    private static Camera camera;
+    private Camera camera;
 
     /**
      * Layers to draw.

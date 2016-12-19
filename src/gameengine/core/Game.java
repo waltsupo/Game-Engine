@@ -31,16 +31,6 @@ public abstract class Game {
     private boolean gameOn;
 
     /**
-     * Max frames per second, restricts rendering.
-     */
-    protected int frameCap;
-
-    /**
-     * Max updates per second.
-     */
-    protected int updateCap;
-
-    /**
      * Frames per second.
      */
     private int frames;
@@ -91,8 +81,6 @@ public abstract class Game {
         Timers.setup();
 
         window = new Window();
-        frameCap = 60;
-        updateCap = 60;
         gameOn = true;
     }
 
@@ -140,21 +128,6 @@ public abstract class Game {
                 second--;
                 frames = 0;
             }
-
-            /*// Update if enough time has passed
-            if (updateTime >= 1f/updateCap) {
-
-                Time.delta = updateTime;
-                updateTime = 0;
-                update();
-            }
-
-            // graphics if enough time has passed
-            if (renderTime >= 1f/frameCap) {
-
-                renderTime = 0;
-                render();
-            }*/
         }
     }
 
