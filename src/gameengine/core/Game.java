@@ -99,13 +99,6 @@ public abstract class Game {
 
         double delta = 0;
 
-        // Time since last render
-        double renderTime = 0;
-        // Time since last update
-        double updateTime = 0;
-        // How much longer it took to update compared to updateCap
-        double overUpdate = 0;
-
         double second = 0;
         frames = 0;
 
@@ -114,10 +107,7 @@ public abstract class Game {
             endTime = System.nanoTime();
             delta = (endTime - startTime) / 1000000000.0;
             startTime = endTime;
-
-            // Add passed time to counters
-            renderTime += delta;
-            updateTime += delta;
+            
             second += delta;
 
             update((float) delta);
