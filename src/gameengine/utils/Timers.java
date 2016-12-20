@@ -21,7 +21,7 @@ public class Timers {
     /**
      * Defines timers-list.
      *
-     * DO NOT CALL THIS METHOD UNLESS YOU KNOW WHAT YOU ARE DOING
+     * DO NOT CALL UNLESS YOU KNOW WHAT YOU ARE DOING
      */
     public static void setup() {
 

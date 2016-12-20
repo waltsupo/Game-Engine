@@ -27,6 +27,13 @@ public class Physics {
         scene = newScene;
     }
 
+    /**
+     * Looks if rectangle collides with anything.
+     *
+     * @param rect Rectangle to check
+     * @param layer Rectangle's layer
+     * @return If collides
+     */
     public static boolean collides(Rectangle rect, int layer) {
 
          return scene.getSubSystem(Collisions.class)

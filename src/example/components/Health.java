@@ -7,6 +7,7 @@ import gameengine.core.components.Component;
  *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.fi
  * @version 2016.1220
+ * @since 1.7
  **/
 public class Health extends Component {
 

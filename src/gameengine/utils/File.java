@@ -19,7 +19,7 @@ public class File {
     /**
      * HashMap that contains all key-value pairs from the file.
      */
-    private HashMap<String, String> pairs;
+    private HashMap < String, String > pairs;
 
     /**
      * Path to current file.
@@ -27,7 +27,7 @@ public class File {
     private Path path;
 
     /**
-     * Default constructor
+     * Default constructor.
      */
     public File() {
 
@@ -151,7 +151,7 @@ public class File {
 
         String toSave = "";
 
-        for (Map.Entry<String, String> entry : pairs.entrySet()) {
+        for (Map.Entry < String, String > entry : pairs.entrySet()) {
 
             toSave += entry.getKey();
             toSave += ":";
@@ -160,7 +160,8 @@ public class File {
         }
 
         java.nio.file.Files.write(path, toSave.getBytes(),
-                StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+                StandardOpenOption.CREATE,
+                StandardOpenOption.TRUNCATE_EXISTING);
     }
 
     /**

@@ -39,7 +39,7 @@ public class Velocity extends Component {
     public Velocity(float x, float y, float resX, float resY) {
 
         active = true;
-        velocity = new Vector(x,y);
+        velocity = new Vector(x, y);
         resistance = new Vector(resX, resY);
     }
 }

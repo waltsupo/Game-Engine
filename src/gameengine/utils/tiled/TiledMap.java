@@ -90,6 +90,12 @@ public class TiledMap {
         columns = 0;
     }
 
+    /**
+     * Returns tileset containing given index.
+     *
+     * @param index Index to find
+     * @return TileSet with index
+     */
     public TileSet getTilesetWithTileIndex(int index) {
 
         TileSet toReturn = null;

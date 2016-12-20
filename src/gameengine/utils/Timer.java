@@ -33,6 +33,7 @@ public class Timer {
      * Sets values for Timer.
      *
      * @param delay How long until given Job should be run
+     * @param loop Should task be repeated
      * @param job Method to run after delay
      */
     public Timer(float delay, boolean loop, Job job) {

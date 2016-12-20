@@ -147,7 +147,6 @@ public class Hero extends GameObject{
      */
     public void update(float delta) {
 
-
         if (InputManager.isKeyDown(KeyEvent.VK_W) && !velocity.onAir) {
             velocity.velocity.y = 250;
             jump.play();
@@ -186,6 +185,7 @@ public class Hero extends GameObject{
             }
         } else {
             att.collider.active = false;
+            
             if (animatedSprite.animation != attack || attack.isFinished) {
                 canAttack = true;
                 movingAnimation.play();

@@ -21,8 +21,8 @@ public class ComponentManager {
     /**
      * Contains listener and list of classes(component combinations).
      */
-    private static HashMap<ComponentListener,
-            ArrayList<ArrayList<Class>>> combinations = new HashMap<>();
+    private static HashMap < ComponentListener,
+            ArrayList < ArrayList < Class >>> combinations = new HashMap<>();
 
     /**
      * Adds new combination to list.
@@ -46,7 +46,7 @@ public class ComponentManager {
         if (combinations.containsKey(listener)) {
             combinations.get(listener).add(temp);
         } else {
-            ArrayList<ArrayList<Class>> list = new ArrayList<>();
+            ArrayList < ArrayList < Class >> list = new ArrayList<>();
             list.add(temp);
             combinations.put(listener, list);
         }
@@ -86,8 +86,8 @@ public class ComponentManager {
                                     Component component) {
 
         // Loop every entry in combinations
-        for (Map.Entry<ComponentListener,
-                ArrayList<ArrayList<Class>>> entry : combinations.entrySet()) {
+        for (Map.Entry < ComponentListener,
+                ArrayList<ArrayList<Class>> > entry : combinations.entrySet()) {
 
             // Loop class combinations
             for (int index = 0; index < entry.getValue().size(); index++) {

@@ -79,7 +79,12 @@ public class GameScene extends Scene {
         enemies = new LinkedList<>();
         spawner = new Spawner(this);
         new Timer(2, true, new Job() {
+
+            /**
+             * Spawns new enemy.
+             */
             public void job() {
+
                 spawner.spawn();
             }
         });
@@ -107,6 +112,7 @@ public class GameScene extends Scene {
     public void update(float delta) {
 
         hero.update(delta);
+
         for (Enemy enemy : enemies)
             enemy.update(delta, hero.transform);
 

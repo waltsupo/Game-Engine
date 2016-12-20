@@ -92,7 +92,8 @@ public class Animation {
      * @param imageHeight Height of animation image on src image
      * @param time Time between animation images
      */
-    private Animation(Image src, int[][] coords, int width, int height, int imageWidth, int imageHeight, float time) {
+    private Animation(Image src, int[][] coords, int width, int height,
+                      int imageWidth, int imageHeight, float time) {
 
         source = src;
         this.images = coords;
@@ -132,6 +133,7 @@ public class Animation {
             for (int index = 0; index < images.length; index++) {
                 images[index][0] += imageWidth;
             }
+
             imageWidth = -imageWidth;
         }
     }
@@ -150,6 +152,7 @@ public class Animation {
         for (int index = 0; index < images.length; index++) {
             images[index][1] += imageHeight;
         }
+
         imageHeight = -imageHeight;
     }
 
@@ -167,12 +170,14 @@ public class Animation {
      * @param time Time between animation images
      * @return New animation created from given parameters
      */
-    public static Animation createAnimation(Image src, int width, int height, int startX, int startY, int imageWidth, int imageHeight, int images, float time) {
+    public static Animation createAnimation(Image src, int width, int height,
+                                            int startX, int startY,
+                                            int imageWidth, int imageHeight,
+                                            int images, float time) {
 
         int[][] coords = new int[images][2];
         int x = startX;
         int y = startY;
-
 
         for (int index = 0; index < coords.length; index++) {
 
@@ -186,6 +191,7 @@ public class Animation {
             x += imageWidth;
         }
 
-        return new Animation(src, coords, width, height, imageWidth, imageHeight, time);
+        return new Animation(src, coords, width, height, imageWidth,
+                imageHeight, time);
     }
 }

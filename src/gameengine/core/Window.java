@@ -46,7 +46,7 @@ public class Window {
     private BufferStrategy bStrat;
 
     /**
-     * Camera used in drawing
+     * Camera used in drawing.
      */
     private Camera camera;
 
@@ -62,6 +62,12 @@ public class Window {
 
         // Close program on "close"
         frame.addWindowListener(new WindowAdapter() {
+
+                                /**
+                                 * Closes window.
+                                 *
+                                 * @param we Window event
+                                 */
                                 public void windowClosing(WindowEvent we) {
 
                                     try {
@@ -73,6 +79,7 @@ public class Window {
                                     GameManager.endGame();
                                 }
                             }
+
         );
 
         // Set canvas on the middle
@@ -149,13 +156,13 @@ public class Window {
     public void stop() {
 
         // draw image to the buffer
-        //g.drawImage(image, 0, 0, canvas.getWidth(), canvas.getHeight(),null);
+        // g.drawImage(image, 0, 0, canvas.getWidth(), canvas.getHeight(),null);
         // show buffered image
         bStrat.show();
     }
 
     /**
-     * Sets current camera if given camera is not null
+     * Sets current camera if given camera is not null.
      *
      * @param camera New camera
      */

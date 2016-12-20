@@ -50,18 +50,21 @@ class DrawableAnimation extends DrawableObject {
         }
 
         time += delta;
+
         while (time >= animatedSprite.animation.time) {
             time -= animatedSprite.animation.time;
 
             if (!animatedSprite.animation.isFinished) {
                 if (animatedSprite.animation.loop) {
-                    if (animatedSprite.animation.index >= animatedSprite.animation.images.length - 1) {
+                    if (animatedSprite.animation.index
+                            >= animatedSprite.animation.images.length - 1) {
                         animatedSprite.animation.index = 0;
                     } else {
                         animatedSprite.animation.index++;
                     }
                 } else {
-                    if (animatedSprite.animation.index < animatedSprite.animation.images.length - 1) {
+                    if (animatedSprite.animation.index
+                            < animatedSprite.animation.images.length - 1) {
                         animatedSprite.animation.index++;
                     } else {
                         animatedSprite.animation.isFinished = true;
@@ -72,8 +75,11 @@ class DrawableAnimation extends DrawableObject {
 
         g.drawImage(animatedSprite.animation.source,
                 (int) gameObject.transform.x + animatedSprite.animation.offsetX,
-                (int) (gameObject.transform.y + animatedSprite.animation.height),
-                (int) (gameObject.transform.x + animatedSprite.animation.offsetX + animatedSprite.animation.width),
+                (int) (gameObject.transform.y
+                        + animatedSprite.animation.height),
+                (int) (gameObject.transform.x
+                        + animatedSprite.animation.offsetX
+                        + animatedSprite.animation.width),
                 (int) gameObject.transform.y,
                 animatedSprite.animation.images
                         [animatedSprite.animation.index][0],
