@@ -78,6 +78,7 @@ public class GameScene extends Scene {
         hero = new Hero(100, 100, 50, 80);
         enemies = new LinkedList<>();
         spawner = new Spawner(this);
+
         new Timer(2, true, new Job() {
 
             /**
