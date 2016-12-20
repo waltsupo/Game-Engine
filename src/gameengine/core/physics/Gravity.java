@@ -13,6 +13,8 @@ import java.util.ArrayList;
 /**
  * SubSystem to handle gravity for GameObjects.
  *
+ * Gravity is not default SubSystem, it has to be added to Scene for it to work.
+ *
  * @author Valtteri Poutanen valtteri.poutanen@hotmail.com
  * @version 2016.1219
  * @since 1.7
