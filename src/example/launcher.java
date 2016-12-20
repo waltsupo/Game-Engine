@@ -22,6 +22,7 @@ public class launcher {
 
         Config config = new Config(1024, 600);
         config.openGL = false;
+        System.out.println(System.getProperty("user.dir"));
 
         new AlphaGame(config);
     }

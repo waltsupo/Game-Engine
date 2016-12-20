@@ -107,17 +107,17 @@ public class Hero extends GameObject{
 
         try {
             idle = Animation.createAnimation(
-                    Files.loadImage("src/example/assets/idle.png"),
+                    Files.loadImage("assets/idle.png"),
                     50,95,0,0,232,439,10,0.05f);
             run = Animation.createAnimation(
-                    Files.loadImage("src/example/assets/run.png"),
+                    Files.loadImage("assets/run.png"),
                     78,95,0,0,363,458,10,0.05f);
             jump = Animation.createAnimation(
-                    Files.loadImage("src/example/assets/jump.png"),
+                    Files.loadImage("assets/jump.png"),
                     78,105,0,0,362,483,10,0.05f);
             jump.loop = false;
             attack = Animation.createAnimation(
-                    Files.loadImage("src/example/assets/attack.png"),
+                    Files.loadImage("assets/attack.png"),
                     115,107,0,0,536,455,10,0.05f);
             attack.loop = false;
             movingAnimation = idle;
@@ -185,7 +185,7 @@ public class Hero extends GameObject{
             }
         } else {
             att.collider.active = false;
-            
+
             if (animatedSprite.animation != attack || attack.isFinished) {
                 canAttack = true;
                 movingAnimation.play();

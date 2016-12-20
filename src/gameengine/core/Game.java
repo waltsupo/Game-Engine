@@ -113,11 +113,13 @@ public abstract class Game {
             update((float) delta);
             render((float) delta);
 
+            /* To print framerate to console
             if (second >= 1) {
                 System.out.println(frames);
                 second--;
                 frames = 0;
             }
+            */
         }
     }
 

@@ -2,7 +2,6 @@ package gameengine.utils;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -18,7 +17,7 @@ public class Files {
     /**
      * Starting folder.
      */
-    public static String defaultPath = "src/assets/";
+    public static String defaultPath = "example/assets/";
 
     /**
      * Creates compatible image from the source.

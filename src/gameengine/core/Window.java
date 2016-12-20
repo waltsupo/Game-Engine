@@ -71,7 +71,7 @@ public class Window {
                                 public void windowClosing(WindowEvent we) {
 
                                     try {
-                                        dispose();
+                                        frame.dispose();
                                     } catch (Exception e) {
 
                                     }
