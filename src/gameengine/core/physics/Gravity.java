@@ -45,6 +45,10 @@ public class Gravity implements ComponentListener, SubSystem {
 
             Velocity velocity = gameObject.getComponent(Velocity.class);
 
+            if (!velocity.active) {
+                continue;
+            }
+
             if (velocity.onAir) {
                 velocity.velocity.y = velocity.velocity.y
                         + (velocity.resistance.y * delta);

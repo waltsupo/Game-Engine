@@ -45,6 +45,10 @@ class DrawableShape extends DrawableObject {
     @Override
     void draw(Graphics2D g, float delta, Camera camera) {
 
+        if (!shapeRenderer.active) {
+            return;
+        }
+
         Rectangle rect = new Rectangle(gameObject.transform.x,
                 gameObject.transform.y,
                 gameObject.transform.width, gameObject.transform.height);

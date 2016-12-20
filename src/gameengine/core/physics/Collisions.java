@@ -50,10 +50,19 @@ public class Collisions implements ComponentListener, SubSystem {
             Collider col1 = collisionObjs.get(colIndex1).
                     getComponent(Collider.class);
 
+            if (!col1.active) {
+                continue;
+            }
+
             for (int colIndex2 = colIndex1; colIndex2 < collisionObjs.size();
                  colIndex2++) {
+
                 Collider col2 = collisionObjs.get(colIndex2).
                         getComponent(Collider.class);
+
+                if (!col2.active) {
+                    continue;
+                }
 
                 if (col1 != col2) {
 

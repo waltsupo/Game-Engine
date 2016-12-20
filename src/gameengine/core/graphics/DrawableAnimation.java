@@ -45,6 +45,10 @@ class DrawableAnimation extends DrawableObject {
      */
     void draw(Graphics2D g, float delta, Camera camera) {
 
+        if (!animatedSprite.active) {
+            return;
+        }
+
         time += delta;
         while (time >= animatedSprite.animation.time) {
             time -= animatedSprite.animation.time;

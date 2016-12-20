@@ -41,6 +41,10 @@ class DrawableSprite extends DrawableObject {
     @Override
     void draw(Graphics2D g, float delta, Camera camera) {
 
+        if (!spriteRenderer.active) {
+            return;
+        }
+
         g.drawImage(spriteRenderer.image, (int) gameObject.transform.x,
                 (int) (gameObject.transform.y + gameObject.transform.height),
                 (int) gameObject.transform.width,

@@ -46,6 +46,9 @@ class DrawableTiledLayer extends DrawableObject {
     /**
      * Draws TiledMapLayer.
      *
+     * It is not possible to disable drawing of TiledLayer unless whole Map is
+     * removed.
+     *
      * @param g Graphics-object for drawing
      * @param delta Elapsed time since last update
      * @param camera Camera for checks
