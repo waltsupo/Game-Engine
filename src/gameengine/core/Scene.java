@@ -1,5 +1,6 @@
 package gameengine.core;
 
+import gameengine.core.graphics.Camera;
 import gameengine.core.physics.Collisions;
 import gameengine.core.graphics.Renderer;
 
@@ -58,10 +59,12 @@ public abstract class Scene {
 
     /**
      * Renders scene.
+     *
+     * @param delta Elapsed time since last update
      */
-    void render() {
+    void render(float delta) {
 
-        renderer.render();
+        renderer.render(delta);
     }
 
     /**
@@ -125,5 +128,15 @@ public abstract class Scene {
         }
 
         return null;
+    }
+
+    /**
+     * Gets camera from the renderer.
+     *
+     * @return Camera currently in use
+     */
+    public Camera getCamera() {
+
+        return renderer.getCamera();
     }
 }

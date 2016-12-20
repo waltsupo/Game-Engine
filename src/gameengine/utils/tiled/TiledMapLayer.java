@@ -62,7 +62,7 @@ public class TiledMapLayer {
                 Transparency.TRANSLUCENT);
 
         Graphics g = layerImage.getGraphics();
-        TileSet tileset = map.tileSets.get(0);
+        TileSet tileset = null;
         Vector tileCoords;
 
         for (int rowIndex = 0; rowIndex < height; rowIndex++) {
@@ -71,6 +71,9 @@ public class TiledMapLayer {
                 if (tiles[rowIndex * width + colIndex] == -1) {
                     continue;
                 }
+
+                tileset = map.getTilesetWithTileIndex(
+                        tiles[rowIndex * width + colIndex]);
 
                 // Get tile's coordinates on tile set
                 tileCoords = tileset.getTileCoords(

@@ -72,9 +72,10 @@ public class TileSet {
     public Vector getTileCoords(int index) {
 
         Vector coords = new Vector(0, 0);
+        int tileIndex = index - startIndex;
 
-        coords.y = (int) Math.floor(index / columns) * tileHeight;
-        coords.x = (index % columns) * tileWidth;
+        coords.y = (int) Math.floor(tileIndex / columns) * tileHeight;
+        coords.x = (tileIndex % columns) * tileWidth;
 
         return coords;
     }

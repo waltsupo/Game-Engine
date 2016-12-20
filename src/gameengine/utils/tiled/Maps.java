@@ -17,9 +17,9 @@ import org.w3c.dom.*;
 public class Maps {
 
     /**
-     * Default path to search assets.
+     * Default path to search example.assets.
      */
-    public static String defaultPath = "src/assets/";
+    public static String defaultPath = "example/assets/";
 
     /**
      * Creates new tiled map from the source.
@@ -144,7 +144,7 @@ public class Maps {
         set.columns = Integer.parseInt(node.getAttributes().
                 getNamedItem("columns").getNodeValue());
         set.startIndex = Integer.parseInt(node.getAttributes().
-                getNamedItem("firstgid").getNodeValue());
+                getNamedItem("firstgid").getNodeValue()) - 1;
 
         map.tileSets.add(set);
     }

@@ -7,23 +7,29 @@ package gameengine.mathlib;
  * @version 2016.1117
  * @since 1.7
  */
-public abstract class Shape {
-
-    /**
-     * X-coordinate.
-     */
-    public float x;
-
-    /**
-     * Y-coordinate.
-     */
-    public float y;
+public interface Shape {
 
     /**
      * Looks if shape collides with other shape.
      *
      * @param shape Other shape
-     * @return true if collides
+     * @return True if collides
      */
-    abstract public boolean collides(Shape shape);
+    boolean collides(Shape shape);
+
+    /**
+     * Move shape to given location.
+     *
+     * @param x New X-coordinate
+     * @param y New Y-coordinate
+     */
+    void moveTo(float x, float y);
+
+    /**
+     * Move shape by given amount.
+     *
+     * @param x Change on X-axis
+     * @param y Change on Y-axis
+     */
+    void translate(float x, float y);
 }

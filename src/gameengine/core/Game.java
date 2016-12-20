@@ -2,6 +2,7 @@ package gameengine.core;
 
 import gameengine.core.physics.Physics;
 import gameengine.utils.Config;
+import gameengine.utils.Timers;
 
 /**
  * Main system to run the game.
@@ -28,16 +29,6 @@ public abstract class Game {
      * Is game alive or not.
      */
     private boolean gameOn;
-
-    /**
-     * Max frames per second, restricts rendering.
-     */
-    protected int frameCap;
-
-    /**
-     * Max updates per second.
-     */
-    protected int updateCap;
 
     /**
      * Frames per second.
@@ -87,10 +78,9 @@ public abstract class Game {
         GameManager.setGame(this);
         GameManager.setWidth(config.width);
         GameManager.setHeight(config.height);
+        Timers.setup();
 
         window = new Window();
-        frameCap = 60;
-        updateCap = 60;
         gameOn = true;
     }
 
@@ -109,13 +99,6 @@ public abstract class Game {
 
         double delta = 0;
 
-        // Time since last render
-        double renderTime = 0;
-        // Time since last update
-        double updateTime = 0;
-        // How much longer it took to update compared to updateCap
-        double overUpdate = 0;
-
         double second = 0;
         frames = 0;
 
@@ -124,35 +107,19 @@ public abstract class Game {
             endTime = System.nanoTime();
             delta = (endTime - startTime) / 1000000000.0;
             startTime = endTime;
-
-            // Add passed time to counters
-            renderTime += delta;
-            updateTime += delta;
+            
             second += delta;
 
             update((float) delta);
-            render();
+            render((float) delta);
 
+            /* To print framerate to console
             if (second >= 1) {
-
+                System.out.println(frames);
                 second--;
                 frames = 0;
             }
-
-            /*// Update if enough time has passed
-            if (updateTime >= 1f/updateCap) {
-
-                Time.delta = updateTime;
-                updateTime = 0;
-                update();
-            }
-
-            // graphics if enough time has passed
-            if (renderTime >= 1f/frameCap) {
-
-                renderTime = 0;
-                render();
-            }*/
+            */
         }
     }
 
@@ -164,14 +131,17 @@ public abstract class Game {
     private void update(float delta) {
 
         currentScene.updateScene(delta);
+        Timers.updateTimers(delta);
     }
 
     /**
      * Renders game to window.
+     *
+     * @param delta Elapsed time since last update
      */
-    private void render() {
+    private void render(float delta) {
 
-        currentScene.render();
+        currentScene.render(delta);
         frames++;
     }
 

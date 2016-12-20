@@ -1,6 +1,7 @@
 package gameengine.core.physics;
 
 import gameengine.core.Scene;
+import gameengine.mathlib.Rectangle;
 
 /**
  * Allows physics related tasks to be completed from anywhere anytime.
@@ -24,6 +25,19 @@ public class Physics {
     public static void setScene(Scene newScene) {
 
         scene = newScene;
+    }
+
+    /**
+     * Looks if rectangle collides with anything.
+     *
+     * @param rect Rectangle to check
+     * @param layer Rectangle's layer
+     * @return If collides
+     */
+    public static boolean collides(Rectangle rect, int layer) {
+
+         return scene.getSubSystem(Collisions.class)
+                .collides(rect, layer);
     }
 
     /**

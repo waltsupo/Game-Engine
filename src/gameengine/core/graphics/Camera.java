@@ -1,5 +1,6 @@
 package gameengine.core.graphics;
 
+import gameengine.core.GameManager;
 import gameengine.core.components.Transform;
 
 /**
@@ -18,10 +19,13 @@ public class Camera {
 
     /**
      * Constructor for camera.
+     *
+     * Camera gets window's width and height as default width and height.
      */
     public Camera() {
 
-        transform = new Transform(0, 0, 800, 600);
+        transform = new Transform(0, 0, GameManager.getWidth(),
+                GameManager.getHeight());
     }
 
     /**

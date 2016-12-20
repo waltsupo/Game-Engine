@@ -29,6 +29,7 @@ public class SpriteRenderer extends Component {
      */
     public SpriteRenderer(Image image, int z) {
 
+        active = true;
         this.z = z;
         this.image = image;
     }

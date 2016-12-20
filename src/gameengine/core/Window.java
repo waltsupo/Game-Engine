@@ -1,11 +1,15 @@
 package gameengine.core;
 
+import gameengine.core.graphics.Camera;
 import gameengine.core.input.InputManager;
 
-import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+
+import static com.sun.deploy.uitoolkit.ToolkitStore.dispose;
 
 /**
  * Window for the game.
@@ -17,9 +21,9 @@ import java.awt.image.BufferedImage;
 public class Window {
 
     /**
-     * JFrame for the game.
+     * Frame for the game.
      */
-    private JFrame frame;
+    private Frame frame;
 
     /**
      * Canvas for drawing.
@@ -42,17 +46,42 @@ public class Window {
     private BufferStrategy bStrat;
 
     /**
+     * Camera used in drawing.
+     */
+    private Camera camera;
+
+    /**
      * Creates window.
      */
     Window() {
 
-        frame = new JFrame();
+        frame = new Frame();
 
         // Prevent resizing
         frame.setResizable(false);
 
         // Close program on "close"
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.addWindowListener(new WindowAdapter() {
+
+                                /**
+                                 * Closes window.
+                                 *
+                                 * @param we Window event
+                                 */
+                                public void windowClosing(WindowEvent we) {
+
+                                    try {
+                                        frame.dispose();
+                                    } catch (Exception e) {
+
+                                    }
+
+                                    GameManager.endGame();
+                                }
+                            }
+
+        );
+
         // Set canvas on the middle
         frame.setLayout(new BorderLayout());
 
@@ -115,7 +144,8 @@ public class Window {
 
         // Flip graphics so that origo will be at the bottom-left corner
         g.translate(0, GameManager.getHeight());
-        g.scale(1, -1);
+        g.scale(GameManager.getWidth() / camera.transform.width,
+                -(GameManager.getHeight() /camera.transform.height));
 
         return g;
     }
@@ -126,8 +156,21 @@ public class Window {
     public void stop() {
 
         // draw image to the buffer
-        g.drawImage(image, 0, 0, canvas.getWidth(), canvas.getHeight(),null);
+        // g.drawImage(image, 0, 0, canvas.getWidth(), canvas.getHeight(),null);
         // show buffered image
         bStrat.show();
+    }
+
+    /**
+     * Sets current camera if given camera is not null.
+     *
+     * @param camera New camera
+     */
+    public void setCamera(Camera camera) {
+
+        if (camera != null) {
+
+            this.camera = camera;
+        }
     }
 }

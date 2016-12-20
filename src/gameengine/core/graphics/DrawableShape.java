@@ -2,9 +2,10 @@ package gameengine.core.graphics;
 
 import gameengine.core.GameObject;
 import gameengine.core.components.ShapeRenderer;
-import gameengine.core.components.enums.ShapeType;
-import gameengine.core.components.enums.Shapes;
 import gameengine.mathlib.Rectangle;
+import gameengine.mathlib.Shape;
+import gameengine.mathlib.ShapeFill;
+
 import java.awt.Color;
 import java.awt.Graphics2D;
 
@@ -38,17 +39,20 @@ class DrawableShape extends DrawableObject {
      * Draws Shape.
      *
      * @param g Graphics-object for drawing
+     * @param delta Elapsed time since last update
      * @param camera Camera for checks
      */
     @Override
-    void draw(Graphics2D g, Camera camera) {
+    void draw(Graphics2D g, float delta, Camera camera) {
 
-        if (shapeRenderer.shape == Shapes.RECTANGLE) {
-            Rectangle rect = new Rectangle(gameObject.transform.x,
-                    gameObject.transform.y,
-                    gameObject.transform.width, gameObject.transform.height);
-            drawRectangle(g, rect, shapeRenderer.color, shapeRenderer.type);
+        if (!shapeRenderer.active) {
+            return;
         }
+
+        Rectangle rect = new Rectangle(gameObject.transform.x,
+                gameObject.transform.y,
+                gameObject.transform.width, gameObject.transform.height);
+        drawRectangle(g, rect, shapeRenderer.color, shapeRenderer.fillType);
     }
 
     /**
@@ -60,14 +64,14 @@ class DrawableShape extends DrawableObject {
      * @param type Fill type
      */
     private void drawRectangle(Graphics2D g, Rectangle rectangle,
-                               Color color, ShapeType type) {
+                               Color color, ShapeFill type) {
 
         g.setColor(color);
 
-        if (type == ShapeType.FILL) {
+        if (type == ShapeFill.FILL) {
             g.fillRect((int) rectangle.x, (int)rectangle.y,
                     (int)rectangle.width, (int)rectangle.height);
-        } else if (type == ShapeType.BORDER) {
+        } else if (type == ShapeFill.BORDERS) {
             g.drawRect((int)rectangle.x, (int)rectangle.y,
                     (int)rectangle.width, (int)rectangle.height);
         }

@@ -9,4 +9,8 @@ package gameengine.core.components;
  */
 public abstract class Component {
 
+    /**
+     * Is component active.
+     */
+    public boolean active;
 }

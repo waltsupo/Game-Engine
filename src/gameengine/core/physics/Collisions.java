@@ -50,10 +50,19 @@ public class Collisions implements ComponentListener, SubSystem {
             Collider col1 = collisionObjs.get(colIndex1).
                     getComponent(Collider.class);
 
+            if (!col1.active) {
+                continue;
+            }
+
             for (int colIndex2 = colIndex1; colIndex2 < collisionObjs.size();
                  colIndex2++) {
+
                 Collider col2 = collisionObjs.get(colIndex2).
                         getComponent(Collider.class);
+
+                if (!col2.active) {
+                    continue;
+                }
 
                 if (col1 != col2) {
 
@@ -152,9 +161,9 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Checks collisions for collider.
+     * Checks collisions for Collider.
      *
-     * @param col collider to look collisions for
+     * @param col Collider to look collisions for
      * @return true if collides
      */
     public boolean checkCollisions(Collider col) {
@@ -191,7 +200,7 @@ public class Collisions implements ComponentListener, SubSystem {
     }
 
     /**
-     * Adds gameobject to list to look collisions for.
+     * Adds GameObject to list to look collisions for.
      *
      * @param gameObject Gameobject that has required components
      * @param comClass Component class first on the combination list

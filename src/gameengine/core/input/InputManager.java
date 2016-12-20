@@ -15,7 +15,7 @@ import java.awt.event.*;
  * @since 1.7
  */
 public class InputManager implements KeyListener, MouseListener,
-        MouseMotionListener{
+        MouseMotionListener {
 
     /**
      * States of all keys, are they down.
