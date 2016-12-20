@@ -29,6 +29,7 @@ public class AnimatedSprite extends Component {
      */
     public AnimatedSprite(Animation animation, int z) {
 
+        active = true;
         this.animation = animation;
         this.z = z;
     }

@@ -37,6 +37,7 @@ public class ShapeRenderer extends Component {
      */
     public ShapeRenderer(int z, Color color, ShapeFill fillType) {
 
+        active = true;
         this.fillType = fillType;
         this.color = color;
         this.z = z;

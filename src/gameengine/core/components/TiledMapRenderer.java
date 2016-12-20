@@ -23,6 +23,7 @@ public class TiledMapRenderer extends Component{
      */
     public TiledMapRenderer(TiledMap map) {
 
+        active = true;
         tilemap = map;
     }
 }

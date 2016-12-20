@@ -9,4 +9,5 @@ package gameengine.core.components;
  */
 public abstract class Component {
 
+    public boolean active;
 }

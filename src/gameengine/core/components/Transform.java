@@ -41,6 +41,9 @@ public class Transform extends Component{
      */
     public Transform(float x, float y, float width, float height) {
 
+        // Useless
+        active = true;
+
         this.x = x;
         this.y = y;
 

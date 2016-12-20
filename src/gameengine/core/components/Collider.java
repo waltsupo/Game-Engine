@@ -32,6 +32,7 @@ public class Collider extends Component{
      */
     public Collider(Shape shape, int layer) {
 
+        active = true;
         this.layer = layer;
         this.shape = shape;
     }
