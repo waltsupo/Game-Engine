@@ -57,7 +57,7 @@ public class Enemy extends GameObject {
 
         try {
             spriteRenderer = new SpriteRenderer(
-                    Files.loadImage("assets/enemy.png", 50, 50), 3);
+                    Files.loadImage("res/enemy.png", 50, 50), 3);
             addComponent(spriteRenderer);
         } catch (IOException e) {
             e.printStackTrace();

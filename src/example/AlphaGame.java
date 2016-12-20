@@ -29,8 +29,8 @@ public class AlphaGame extends Game {
      */
     public void start() {
 
-        Files.defaultPath = "assets/";
-        Maps.defaultPath = "assets/";
+        Files.defaultPath = "res/";
+        Maps.defaultPath = "res/";
         setScene(new GameScene());
     }
 }
